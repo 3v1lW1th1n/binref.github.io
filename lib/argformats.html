@@ -1,0 +1,2773 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.8.3" />
+<title>the refinery.lib.argformats documentation</title>
+<meta name="description" content="On a Mission to Refine Binaries" />
+<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
+<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow-night-bright.min.css" rel="stylesheet">
+<style>.flex{display:flex !important}body{background-color:#0D0D0D;color:#EEEEEE;font-size:12pt}@font-face{font-family:"FixedSysEx";src:local('Fixedsys Excelsior 3.01-L2'),local('Fixedsys Excelsior 3.01'),local('FixedSysEx'),url(../FixedSysEx.ttf) format('truetype')}code,pre,body,html{font-family:FixedSysEx,monospace}b,strong{font-weight:normal}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #EEEEEE;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#EE8080;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#EEEEEE}// .title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#BB4040}pre code{background:#000000;display:block;padding:1px 0px 4px 0px;line-height:100%}code{background:#000000;padding:1px 0px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#000000;border:0;border-top:1px solid #EEEEEE;border-bottom:1px solid #EEEEEE;margin:1em 0;padding:1ex;overflow-x:auto}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #EEEEEE}#index ul{padding:0}// #index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 10px}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#000000;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#0D0D0D}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#EEEEEE;border-left:5px solid #EEEEEE;padding-left:1em}.inheritance em{font-style:normal}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1ch}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition.note,.admonition.info,.admonition.todo,.admonition.versionadded,.admonition.important,.admonition.tip,.admonition.hint{background:#054000}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#998800}.admonition.error,.admonition.danger,.admonition.caution{background:#300000}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #EEEEEE}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #EEEEEE;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>refinery.lib.argformats</code></h1>
+</header>
+<section id="section-intro">
+<h1 id="multibin-syntax">Multibin Syntax</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Many refinery units receive arguments which represent binary data, and usually these arguments can
+be given in <strong>multibin</strong> format, which is a special syntax which allows to preprocess data with a
+number of <strong>handlers</strong>. For example, the multibin expression <code>md5:password</code> preprocesses the
+argument <code>password</code> (which is understood as its UTF8 encoding by default) using the <code>md5</code> handler,
+which returns the MD5 hash of the input data. Consequently, the output of</p>
+<pre><code>emit md5:password | hex -R
+</code></pre>
+<p>would be the string <code>5F4DCC3B5AA765D61D8327DEB882CF99</code>. The most important basic handlers to know
+are:</p>
+<ul>
+<li><code>s:string</code> disables all further preprocessing and interprets <code>string</code> as an UTF8 encoded string</li>
+<li><code>u:string</code> same, but as an UTF16-LE encoded string</li>
+<li><code>h:string</code> assumes that <code>string</code> is a hexadecimal string of even length and returns the decoded byte sequence.</li>
+<li>any unit's name can be prefixed to the string, i.e. <code>esc:</code> corresponds to the line break character.</li>
+</ul>
+<p>If a multibin argument does not use any handler, refinery first interprets the string as the path
+of an existing file on disk and attempts to return the contents of this file. If this fails, the
+UTF8 encoding of the string is returned.</p>
+<p>The handlers <code>copy</code> and <code>cut</code> as well as their shortcuts <code>c</code> and <code>x</code> are <strong>final</strong> handlers like
+the above example <code>s</code>, i.e. the string that follows <code>copy:</code> will not be interpreted as a multibin
+expression. Indeed, <code>copy</code> and <code>cut</code> expect the remaining string to be in Python slice syntax. The
+expression <code>copy:0:1</code> would, for example, represent the first byte of the input data. With <code>copy</code>,
+this data is copied out of the input and used for the argument. With <code>cut</code>, this data is removed
+from the input data and used for the argument. All <code>cut</code> operations are performed in the order in
+which the arguments are specified on the command line. For example, <code>emit Test | cca x::1 x::1</code>
+will output <code>stTe</code>.</p>
+<p>The modifiers <code>s</code>, <code>u</code>, <code>h</code>, <code>copy</code> (or <code>c</code>), and <code>cut</code> (or <code>x</code>) along with using unit modifiers
+should cover most use cases. To learn about other existing modifiers, refer to the rest of this
+documentation.</p>
+<h2 id="the-details">The Details</h2>
+<p>This module implements all argument parser types for the binary refinery. Notable classes for the
+command line use are the following:</p>
+<ul>
+<li><code><a title="refinery.lib.argformats.DelayedBinaryArgument" href="#refinery.lib.argformats.DelayedBinaryArgument">DelayedBinaryArgument</a></code> (used almost everywhere)</li>
+<li><code><a title="refinery.lib.argformats.DelayedNumbinArgument" href="#refinery.lib.argformats.DelayedNumbinArgument">DelayedNumbinArgument</a></code> (used by children of <code><a title="refinery.units.blockwise.ArithmeticUnit" href="../units/blockwise/index.html#refinery.units.blockwise.ArithmeticUnit">ArithmeticUnit</a></code>)</li>
+<li><code><a title="refinery.lib.argformats.DelayedRegexpArgument" href="#refinery.lib.argformats.DelayedRegexpArgument">DelayedRegexpArgument</a></code> (used by <code><a title="refinery.rex" href="../index.html#refinery.rex">rex</a></code>, <code><a title="refinery.resub" href="../index.html#refinery.resub">resub</a></code>)</li>
+</ul>
+<p>All of the above classes inherit from <code><a title="refinery.lib.argformats.DelayedArgument" href="#refinery.lib.argformats.DelayedArgument">DelayedArgument</a></code>. The following
+mainly applies to <code><a title="refinery.lib.argformats.DelayedBinaryArgument" href="#refinery.lib.argformats.DelayedBinaryArgument">DelayedBinaryArgument</a></code>, but the other two parsers work
+similar. The classes implement the various modifiers which are available to multibin expressions.</p>
+<p>The reason why these parsers have <strong>"delayed"</strong> in their name is that they allow the implementation
+of handlers which require input data to be present, like the handlers <code>copy</code> and <code>cut</code>, which are
+implemented in <code><a title="refinery.lib.argformats.DelayedBinaryArgument.copy" href="#refinery.lib.argformats.DelayedBinaryArgument.copy">DelayedBinaryArgument.copy()</a></code> and
+<code><a title="refinery.lib.argformats.DelayedBinaryArgument.cut" href="#refinery.lib.argformats.DelayedBinaryArgument.cut">DelayedBinaryArgument.cut()</a></code>, respectively. These expressions can not be
+evaluated immediately after the command line is parsed, but only as soon as input data becomes
+available for processing.</p>
+<p>In addition to the handlers which are implemented here, each refinery unit defines a (non-final)
+modifier. For example, the expression <code>b64:Zm9v</code> corresponds to the binary string <code>foo</code>: The unit
+<code><a title="refinery.b64" href="../index.html#refinery.b64">b64</a></code> is used to decode the string <code>Zm9v</code> here. Arguments can be passed to units in square
+brackets and separated by commas, but there is no support for escaping comma characters. For
+example, the multibin expression <code>xor[0xAA]:b64:2c/J2M/e</code> will return the binary string <code>secret</code> as
+the final expression <code>2c/J2M/e</code> is base64-decoded and each byte xor'ed with the key <code>0xAA</code>. As a
+second example, the expression</p>
+<pre><code>hex[-R]:sha256:file:foobar.txt
+</code></pre>
+<p>will be parsed as the hexadecimal representation of the SHA256 hash of the file <code>foobar.txt</code>.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L0-L893" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+&#34;&#34;&#34;
+# Multibin Syntax
+
+## Introduction
+
+Many refinery units receive arguments which represent binary data, and usually these arguments can
+be given in **multibin** format, which is a special syntax which allows to preprocess data with a
+number of **handlers**. For example, the multibin expression `md5:password` preprocesses the
+argument `password` (which is understood as its UTF8 encoding by default) using the `md5` handler,
+which returns the MD5 hash of the input data. Consequently, the output of
+
+    emit md5:password | hex -R
+
+would be the string `5F4DCC3B5AA765D61D8327DEB882CF99`. The most important basic handlers to know
+are:
+
+- `s:string` disables all further preprocessing and interprets `string` as an UTF8 encoded string
+- `u:string` same, but as an UTF16-LE encoded string
+- `h:string` assumes that `string` is a hexadecimal string of even length and returns the decoded byte sequence.
+- any unit&#39;s name can be prefixed to the string, i.e. `esc:\n` corresponds to the line break character.
+
+If a multibin argument does not use any handler, refinery first interprets the string as the path
+of an existing file on disk and attempts to return the contents of this file. If this fails, the
+UTF8 encoding of the string is returned.
+
+The handlers `copy` and `cut` as well as their shortcuts `c` and `x` are **final** handlers like
+the above example `s`, i.e. the string that follows `copy:` will not be interpreted as a multibin
+expression. Indeed, `copy` and `cut` expect the remaining string to be in Python slice syntax. The
+expression `copy:0:1` would, for example, represent the first byte of the input data. With `copy`,
+this data is copied out of the input and used for the argument. With `cut`, this data is removed
+from the input data and used for the argument. All `cut` operations are performed in the order in
+which the arguments are specified on the command line. For example, `emit Test | cca x::1 x::1`
+will output `stTe`.
+
+The modifiers `s`, `u`, `h`, `copy` (or `c`), and `cut` (or `x`) along with using unit modifiers
+should cover most use cases. To learn about other existing modifiers, refer to the rest of this
+documentation.
+
+## The Details
+
+This module implements all argument parser types for the binary refinery. Notable classes for the
+command line use are the following:
+
+- `refinery.lib.argformats.DelayedBinaryArgument` (used almost everywhere)
+- `refinery.lib.argformats.DelayedNumbinArgument` (used by children of `refinery.units.blockwise.ArithmeticUnit`)
+- `refinery.lib.argformats.DelayedRegexpArgument` (used by `refinery.rex`, `refinery.resub`)
+
+All of the above classes inherit from `refinery.lib.argformats.DelayedArgument`. The following
+mainly applies to `refinery.lib.argformats.DelayedBinaryArgument`, but the other two parsers work
+similar. The classes implement the various modifiers which are available to multibin expressions.
+
+The reason why these parsers have **&#34;delayed&#34;** in their name is that they allow the implementation
+of handlers which require input data to be present, like the handlers `copy` and `cut`, which are
+implemented in `refinery.lib.argformats.DelayedBinaryArgument.copy` and
+`refinery.lib.argformats.DelayedBinaryArgument.cut`, respectively. These expressions can not be
+evaluated immediately after the command line is parsed, but only as soon as input data becomes
+available for processing.
+
+In addition to the handlers which are implemented here, each refinery unit defines a (non-final)
+modifier. For example, the expression `b64:Zm9v` corresponds to the binary string `foo`: The unit
+`refinery.b64` is used to decode the string `Zm9v` here. Arguments can be passed to units in square
+brackets and separated by commas, but there is no support for escaping comma characters. For
+example, the multibin expression `xor[0xAA]:b64:2c/J2M/e` will return the binary string `secret` as
+the final expression `2c/J2M/e` is base64-decoded and each byte xor&#39;ed with the key `0xAA`. As a
+second example, the expression
+
+    hex[-R]:sha256:file:foobar.txt
+
+will be parsed as the hexadecimal representation of the SHA256 hash of the file `foobar.txt`.
+&#34;&#34;&#34;
+import ast
+
+from itertools import cycle, count, chain
+from argparse import ArgumentTypeError
+from contextlib import suppress
+from functools import update_wrapper
+from typing import Optional, Tuple, Union, Mapping, Any, List, Iterable, ByteString
+
+from ..lib.frame import Chunk
+from ..lib.tools import isbuffer
+from ..lib.loader import resolve, EntryNotFound
+
+
+class PythonExpression:
+    &#34;&#34;&#34;
+    Implements a parser for any Python expression with a prescribed set of variable
+    names permitted to occur in the expression. The resulting object is a callable
+    which can be given the string representation of such an expression. In turn, the
+    result of this operation is either the value of the expression if no variables
+    were present, or a callable which expects keyword arguments corresponding to the
+    permitted variable names.
+    &#34;&#34;&#34;
+
+    _ALLOWED_NODE_TYPES = {
+        ast.Add,
+        ast.BinOp,
+        ast.BitAnd,
+        ast.BitAnd,
+        ast.BitOr,
+        ast.BitXor,
+        ast.BoolOp,
+        ast.Compare,
+        ast.Constant,
+        ast.Div,
+        ast.Eq,
+        ast.FloorDiv,
+        ast.Gt,
+        ast.GtE,
+        ast.IfExp,
+        ast.Index,
+        ast.Invert,
+        ast.Is,
+        ast.IsNot,
+        ast.Load,
+        ast.LShift,
+        ast.Lt,
+        ast.LtE,
+        ast.List,
+        ast.MatMult,
+        ast.Mod,
+        ast.Mult,
+        ast.Name,
+        ast.Not,
+        ast.NotEq,
+        ast.Num,
+        ast.Or,
+        ast.Pow,
+        ast.RShift,
+        ast.Slice,
+        ast.Sub,
+        ast.Subscript,
+        ast.Tuple,
+        ast.UAdd,
+        ast.UnaryOp,
+        ast.USub
+    }
+
+    def __init__(self, *variables):
+        self.variables = set(variables)
+
+    def __call__(self, definition):
+        try:
+            expression = ast.parse(definition)
+            nodes = ast.walk(expression)
+        except Exception:
+            raise ArgumentTypeError(F&#39;The provided expression could not be parsed: {definition!s}&#39;)
+
+        if type(next(nodes)) != ast.Module:
+            raise ArgumentTypeError(F&#39;unknown error parsing the expression: {definition!s}&#39;)
+
+        if type(next(nodes)) != ast.Expr:
+            raise ArgumentTypeError(F&#39;not a valid Python expression: {definition!s}&#39;)
+
+        nodes = list(nodes)
+        types = set(type(node) for node in nodes)
+        names = set(node.id for node in nodes if type(node) == ast.Name)
+
+        if not types &lt;= self._ALLOWED_NODE_TYPES:
+            raise ArgumentTypeError(
+                &#39;the following operations are not allowed: {}&#39;.format(
+                    &#39;, &#39;.join(t.__name__ for t in types - self._ALLOWED_NODE_TYPES))
+            )
+
+        if not names &lt;= self.variables:
+            raise ArgumentTypeError(
+                &#39;the following variable names are unknown: {}&#39;.format(
+                    &#39;, &#39;.join(names - self.variables))
+            )
+
+        if not self.variables:
+            return eval(definition)
+        else:
+            def evaluator(**kw): return eval(definition, None, kw)
+            return evaluator
+
+
+_PYTHON_EXPRESSION = PythonExpression()
+
+
+def sliceobj(expression: Union[int, str]) -&gt; slice:
+    &#34;&#34;&#34;
+    Uses `refinery.lib.argformats.PythonExpression` to parse slice expressions
+    where the bounds can be given as arithmetic expressions. For example, this
+    argument format type will process the string `0x11:0x11+4*0x34` as the slice
+    object `slice(17, 225, None)`.
+    &#34;&#34;&#34;
+    if isinstance(expression, int):
+        sliced = (expression,)
+    else:
+        sliced = expression.split(&#39;:&#39;)
+        if not sliced or len(sliced) &gt; 3:
+            raise ArgumentTypeError(F&#39;the expression {expression} is not a valid slice.&#39;)
+        sliced = [None if not t else _PYTHON_EXPRESSION(t) for t in sliced]
+    if len(sliced) == 1:
+        k = sliced[0]
+        return slice(k, k + 1) if k + 1 else slice(k, None, None)
+    return slice(*sliced)
+
+
+class virtualaddr:
+    &#34;&#34;&#34;
+    Represents a virtual address; used by `refinery.peslice` and
+    `refinery.elfslice` to reference offsets in executable file
+    formats as they would appear in memory.
+    &#34;&#34;&#34;
+    def __init__(self, address=&#39;0&#39;):
+        try:
+            self.section, address = address.split(&#39;:&#39;)
+        except ValueError:
+            self.section = None
+        else:
+            if not address:
+                self.address = 0
+                return
+        try:
+            address = address.upper()
+            if address.endswith(&#39;H&#39;):
+                address = &#39;0x&#39; + address[:-1]
+            self.address = number[0:](address)
+        except ValueError:
+            pass
+        try:
+            self.address = int(address, 0x10)
+        except ValueError:
+            raise ArgumentTypeError(F&#39;could not parse {address} as hexadecimal integer&#39;)
+
+
+def utf8(x):
+    &#34;&#34;&#34;
+    Returns the UTF8 encoding of the given string.
+    &#34;&#34;&#34;
+    return x.encode(&#39;UTF8&#39;)
+
+
+class number:
+    __name__ = &#39;number&#39;
+
+    def __init__(self, min=None, max=None):
+        self.min = min
+        self.max = max
+
+    def __getitem__(self, bounds):
+        return self.__class__(bounds.start, bounds.stop)
+
+    def __call__(self, value):
+        if not isinstance(value, int):
+            try:
+                value = _PYTHON_EXPRESSION(value)
+            except Exception:
+                raise ValueError(&#39;unable to parse expression&#39;)
+            if not isinstance(value, int):
+                raise ArgumentTypeError(&#39;the expression with value {} is not an integer&#39;.format(value))
+        if self.min is not None and value &lt; self.min or self.max is not None and value &gt; self.max:
+            raise ValueError(&#39;value {} is out of bounds [{}, {}]&#39;.format(value, self.min, self.max))
+        return value
+
+
+number = number()
+&#34;&#34;&#34;
+The singleton instance of a class that uses `refinery.lib.argformats.PythonExpression`
+to parse expressions with integer value. This singleton can be slice accessed to
+create new number parsers, e.g. `number[0:]` will refuse to parse negative integer
+expressions.
+&#34;&#34;&#34;
+
+
+class IncompatibleHandler(ValueError):
+    &#34;&#34;&#34;
+    This exception is generated when `refinery.lib.argformats.DelayedArgument` handlers
+    are chained in an incompatible way.
+    &#34;&#34;&#34;
+    def __init__(self, type_expected, type_observed, modifier):
+        self.type_expected = type_expected
+        self.type_observed = type_observed
+        self.modifier = modifier
+        modifier_name = F&#39;handler {modifier}&#39; if modifier else &#39;default handler&#39;
+        super().__init__(&#39;{} received {} but expected {}&#39;.format(
+            modifier_name,
+            type_observed.__name__,
+            type_expected.__name__
+        ))
+
+
+class TooLazy(Exception):
+    &#34;&#34;&#34;
+    Exception which indicates that an argument parser requires input data before it can be
+    evaluated.
+    &#34;&#34;&#34;
+    pass
+
+
+class VariableMissing(RuntimeError):
+    def __init__(self, name):
+        super().__init__(F&#39;The variable {name} is not defined.&#39;)
+        self.name = name
+
+
+class LazyEvaluation:
+    &#34;&#34;&#34;
+    Empty parent class for any unit that throws `refinery.lib.argformats.TooLazy`.
+    &#34;&#34;&#34;
+    pass
+
+
+class DelayedArgumentDispatch:
+    &#34;&#34;&#34;
+    This class is used as a decorator for the default handler of classes that inherit from
+    `refinery.lib.argformats.DelayedArgument`. After decorating the routine `handler` with
+    `refinery.lib.argformats.DelayedArgumentDispatch`, `handler.register` can be used to
+    register additional handlers.
+    &#34;&#34;&#34;
+    def __init__(self, method):
+        update_wrapper(self, method)
+        self.default = method
+        self.handlers = {}
+        self.final = {}
+        self.units = {}
+
+    def _get_unit(self, name, *args):
+        name = name.replace(&#39;-&#39;, &#39;_&#39;)
+        uhash = hash((name,) + args)
+        if uhash in self.units:
+            return self.units[uhash]
+        try:
+            unit = resolve(name)
+        except EntryNotFound:
+            return None
+        else:
+            unit = unit and unit.assemble(*args).detach()
+            self.units[uhash] = unit
+            return unit
+
+    def __get__(self, instance, instancetype):
+        # We do not know the class whose methods we are decorating.
+        self.instance = instance
+        return self
+
+    def __call__(self, data, modifier=None, *args):
+        try:
+            handler = self.default if modifier is None else self.handlers[modifier]
+            return handler(self.instance, data, *args)
+        except KeyError:
+            unit = self._get_unit(modifier, *args)
+            if not unit:
+                raise ArgumentTypeError(F&#39;failed to build unit {modifier}&#39;)
+            result = unit.process(data)
+            return result if isbuffer(result) else B&#39;&#39;.join(result)
+
+    def can_handle(self, modifier, *args):
+        return modifier in self.handlers or bool(self._get_unit(modifier, *args))
+
+    def terminates(self, modifier):
+        &#34;&#34;&#34;
+        Indicates whether the given registered modifier is final.
+        &#34;&#34;&#34;
+        return self.final.get(modifier, False)
+
+    def register(self, *modifiers, final=False):
+        &#34;&#34;&#34;
+        Registers a new modifier handler.
+        &#34;&#34;&#34;
+        def _register(method):
+            for modifier in modifiers:
+                self.handlers[modifier] = method
+                self.final[modifier] = final
+            return method
+        return _register
+
+
+class DelayedArgument(LazyEvaluation):
+    &#34;&#34;&#34;
+    This base class for delayed argument parsers implements parsing
+    expressions into supported modifiers.
+    &#34;&#34;&#34;
+    _ARG_BEGIN_TOKEN = &#39;[&#39;
+    _ARG_CLOSE_TOKEN = &#39;]&#39;
+    _ARG_SPLIT_TOKEN = &#39;,&#39;
+
+    def __init__(self, expression: str):
+        self.modifiers = []
+        self.finalized = False
+        if not isinstance(self.handler, DelayedArgumentDispatch):
+            raise NotImplementedError(
+                &#39;The default handler is required to be a &#39;
+                &#39;DelayedArgumentDispatch instance.&#39;
+            )
+        while not self.finalized:
+            name, arguments, newexpr = self._split_modifier(expression)
+            if not name or not self.handler.can_handle(name, *arguments):
+                break
+            self.modifiers.append((name, arguments))
+            expression = newexpr
+            if self.handler.terminates(name):
+                self.finalized = True
+        self.seed = expression
+        self.modifiers.reverse()
+
+    def _split_modifier(self, expression: str) -&gt; Tuple[Optional[str], Tuple[str], str]:
+        brackets = 0
+        name = None
+        argoffset = 0
+        arguments = ()
+        for k, character in enumerate(expression):
+            if character == self._ARG_BEGIN_TOKEN:
+                if not brackets:
+                    if argoffset:
+                        # This is the second time we encounter what appears to be an
+                        # argument list, before the modifier has ended. This is not
+                        # possible, and we decide to assume that no modifier was used.
+                        break
+                    name = expression[:k]
+                    argoffset = k + 1
+                brackets += 1
+                continue
+            if character == self._ARG_CLOSE_TOKEN:
+                if brackets == 1:
+                    arguments += expression[argoffset:k],
+                elif not brackets:
+                    if argoffset:
+                        raise ArgumentTypeError(
+                            F&#39;Unable to parse {expression}, too many closing brackets.&#39;
+                        )
+                    else:
+                        break
+                brackets -= 1
+                continue
+            if character == self._ARG_SPLIT_TOKEN:
+                if brackets == 1:
+                    arguments += expression[argoffset:k],
+                    argoffset = k + 1
+            if character == &#39;:&#39; and not brackets:
+                if name is None:
+                    name = expression[:k]
+                return name, arguments, expression[k + 1:]
+        return None, (), expression
+
+    def __call__(self, data: Optional[Chunk] = None) -&gt; bytes:
+        arg = self.seed
+        mod = iter(self.modifiers)
+        if not self.finalized:
+            mod = chain(((None, ()),), mod)
+        for name, arguments in mod:
+            if isbuffer(arg):
+                arg = Chunk(arg)
+                with suppress(AttributeError):
+                    arg.meta.update(data.meta)
+            try:
+                arg = self.handler(arg, name, *arguments)
+            except VariableMissing as v:
+                if data is not None:
+                    raise
+                raise TooLazy from v
+            except Exception as E:
+                raise ArgumentTypeError(F&#39;failed to apply modifier {name} to incoming data: {E}&#39;) from E
+            if callable(arg):
+                if data is None:
+                    raise TooLazy
+                arg = arg(data)
+        return arg
+
+    def handler(self, expression: str):
+        &#34;&#34;&#34;
+        This method is overwritten by children of `refinery.lib.argformats.DelayedArgument`
+        to implement the default handler.
+        &#34;&#34;&#34;
+        raise NotImplementedError
+
+
+class DelayedBinaryArgument(DelayedArgument):
+
+    @DelayedArgumentDispatch
+    def handler(self, expr: str) -&gt; bytes:
+        try:
+            return open(expr, &#39;rb&#39;).read()
+        except Exception:
+            pass
+        return utf8(expr)
+
+    @handler.register(&#39;s&#39;, final=True)
+    def s(self, string: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        The final modifier `s:string` returns the UTF-8 encoded representation of `string`.
+        &#34;&#34;&#34;
+        return string.encode(&#39;UTF8&#39;)
+
+    @handler.register(&#39;u&#39;, final=True)
+    def u(self, string: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        The final modifier `u:string` returns the UTF16 (little endian without BOM) encoded
+        representation of `string`.
+        &#34;&#34;&#34;
+        return string.encode(&#39;UTF-16LE&#39;)
+
+    @handler.register(&#39;a&#39;, final=True)
+    def a(self, string: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        The final modifier `a:string` returns the latin-1 encoded representation of `string`.
+        &#34;&#34;&#34;
+        return string.encode(&#39;LATIN-1&#39;)
+
+    @handler.register(&#39;H&#39;, &#39;h&#39;, final=True)
+    def h(self, string: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        The final modifier `h:string` (or `H:string`) returns the hex decoding of `string`.
+        &#34;&#34;&#34;
+        import base64
+        return base64.b16decode(string, casefold=True)
+
+    @handler.register(&#39;f&#39;, &#39;file&#39;, final=True)
+    def file(self, path: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        The final modifier `f:path` or `file:path` returns the contents of the file located
+        at the given path.
+        &#34;&#34;&#34;
+        return open(path, &#39;rb&#39;).read()
+
+    @handler.register(&#39;range&#39;, final=True)
+    def range(self, region: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        Implements the final modifier `range:bounds` to generate a sequence of bytes, where
+        `bounds` is parsed as a `refinery.lib.argformats.sliceobj` with one exception: If
+        `bounds` is just a single integer, it is interpreted as the upper bound for a sequence
+        of bytes starting at zero.
+        &#34;&#34;&#34;
+        try:
+            bounds = number(region)
+            return bytearray(range(bounds))
+        except ValueError:
+            pass
+        bounds = sliceobj(region)
+        if bounds.stop is None:
+            raise ArgumentTypeError(&#39;cannot generate unbounded byte sequence.&#39;)
+        return bytearray(range(bounds.start or 0, bounds.stop, bounds.step or 1))
+
+    @handler.register(&#39;c&#39;, &#39;copy&#39;, final=True)
+    def copy(self, region: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        Implements the final modifier `c:region` or `copy:region`, where `region` is parsed
+        as a `refinery.lib.argformats.sliceobj`. The result contains the corresponding slice
+        of the input data.
+        &#34;&#34;&#34;
+        bounds = sliceobj(region)
+        return lambda d: d[bounds]
+
+    @handler.register(&#39;x&#39;, &#39;cut&#39;, final=True)
+    def cut(self, region: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        `x:region` and `cut:region` work like `refinery.lib.argformats.DelayedBinaryArgument.copy`,
+        but the corresponding bytes are also removed from the input data.
+        &#34;&#34;&#34;
+        def extract(data: bytearray):
+            result = data[bounds]
+            data[bounds] = []
+            return result
+        bounds = sliceobj(region)
+        return extract
+
+    def _interpret_variable(self, name: str, obj: Any):
+        if isinstance(obj, (bytes, bytearray, memoryview)):
+            return obj
+        if isinstance(obj, str):
+            return utf8(obj)
+        raise ValueError(F&#39;The meta variable {name} is of type {type(obj).__name__} and no conversion to bytes is known.&#39;)
+
+    @handler.register(&#39;var&#39;, final=True)
+    def meta_get(self, name: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        Contains the value of a meta variable. The variable remains attached to the chunk.
+        &#34;&#34;&#34;
+        def extract(data: Chunk):
+            try:
+                result = data.meta[name]
+            except KeyError as K:
+                raise VariableMissing(name) from K
+            return self._interpret_variable(name, result)
+        return extract
+
+    @handler.register(&#39;pop&#39;, final=True)
+    def meta_pop(self, name: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        Extracts data from a meta field in a chunk.
+        &#34;&#34;&#34;
+        def extract(data: Chunk):
+            try:
+                result = data.meta.pop(name)
+            except KeyError as K:
+                raise VariableMissing(name) from K
+            return self._interpret_variable(name, result)
+        return extract
+
+
+def multibin(expression: Union[str, bytes, bytearray]) -&gt; Union[bytes, DelayedBinaryArgument]:
+    &#34;&#34;&#34;
+    This is the argument parser type that uses `refinery.lib.argformats.DelayedBinaryArgument`.
+    &#34;&#34;&#34;
+    if not isinstance(expression, str):
+        return bytes(expression)
+    arg = DelayedBinaryArgument(expression)
+    with suppress(TooLazy):
+        return arg()
+    return arg
+
+
+class DelayedNumbinArgument(DelayedArgument):
+    &#34;&#34;&#34;
+    A parser for sequences of numeric arguments. As `refinery.lib.argformats.DelayedNumbinArgument.handler`
+    uses `refinery.lib.argformats.multibin`, it is possible to use any handler specified in
+    `refinery.lib.argformats.DelayedBinaryArgument` as long as these handlers precede any of the handlers
+    defined here.
+    &#34;&#34;&#34;
+
+    _EV_PARSER = PythonExpression(&#39;N&#39;)
+
+    def _mbin(self, expr: str) -&gt; bytes:
+        binary = multibin(expr)
+        if not binary:
+            raise ArgumentTypeError(&#39;received empty binary argument&#39;)
+        return binary
+
+    def _iter(self, unknown):
+        if hasattr(unknown, &#39;__iter__&#39;):
+            it = list(unknown)
+            if all(isinstance(t, int) for t in it):
+                return it
+        if isinstance(unknown, int):
+            return (unknown,)
+        raise ArgumentTypeError(
+            F&#39;numbin parser encountered {unknown} of type {type(unknown).__name__}, &#39;
+            F&#39;but only integers are supported.&#39;
+        )
+
+    @DelayedArgumentDispatch
+    def handler(self, expression: str) -&gt; Iterable[int]:
+        &#34;&#34;&#34;
+        The default handler: Attempts to parse the input expression as a sequence of integers
+        and uses `refinery.lib.argformats.multibin` to parse it if that fails.
+        &#34;&#34;&#34;
+        try:
+            ev = self._EV_PARSER(expression)
+            return self._iter(ev())
+        except Exception:
+            return self._mbin(expression)
+
+    @handler.register(&#39;ev&#39;)
+    def ev(self, expression: Union[str, ByteString]) -&gt; Iterable[int]:
+        &#34;&#34;&#34;
+        Final modifier `ev:expression`; uses a `refinery.lib.argformats.PythonExpression`
+        parser to process expressions that may contain the variable `N` whose value will be
+        the size of the input data.
+        &#34;&#34;&#34;
+        if not isinstance(expression, str):
+            try:
+                expression = expression.decode(&#39;ascii&#39;)
+            except AttributeError:
+                return expression
+        ev = self._EV_PARSER(expression)
+        try:
+            return self._iter(ev())
+        except Exception:
+            return lambda d: self._iter(ev(N=len(d)))
+
+    @handler.register(&#39;unpack&#39;, final=True)
+    def unpack(self, expression: str) -&gt; Iterable[int]:
+        &#34;&#34;&#34;
+        Final modifier `unpack:[#]size:expression`; uses `refinery.lib.chunks.unpack` to
+        convert a sequence of bytes into a sequence of numbers by unpacking them. The `expression`
+        parameter is parsed with `refinery.lib.argformats.multibin` yielding this byte string.
+        The `size` has to be an integer expression specifying the size of each encoded number in
+        bytes. The optional hash tag modifier preceding the size indicates that the parser
+        should use big endian rather than the default, little endian.
+        &#34;&#34;&#34;
+        from .chunks import unpack
+        size, expression = expression.split(&#39;:&#39;, 1)
+        bigendian = False
+        if size.startswith(&#39;#&#39;):
+            bigendian = True
+            size = size[1:]
+        try:
+            size = int(size, 0)
+        except ValueError as E:
+            raise ArgumentTypeError(
+                &#39;the syntax is unpack:[!]size:bytes where size is an integer &#39;
+                &#39;and bytes a multibin expression. You can specify the exclamation &#39;
+                &#39;mark to use network (big endian) byte order.&#39;
+            ) from E
+        mbin = self._mbin(expression)
+        if not callable(mbin):
+            return list(unpack(mbin, size, bigendian))
+        return lambda d: list(unpack(mbin(d), size, bigendian))
+
+    @handler.register(&#39;inc&#39;)
+    def inc(self, it: Iterable[int], wrap=None) -&gt; Iterable[int]:
+        &#34;&#34;&#34;
+        The modifier `inc:it` or `inc(wrap):it` expects a sequence `it` of integers
+        (a binary string is interpreted as the sequence of its byte values), iterates it
+        cyclically and perpetually adds an increasing counter to the result. If `wrap`
+        is specified, then the counter is reduced modulo this number.
+        &#34;&#34;&#34;
+        def delay(_):
+            k = cycle(range(number(wrap))) if wrap else count()
+            for item in cycle(it):
+                yield item + next(k)
+        return delay
+
+    @handler.register(&#39;dec&#39;)
+    def dec(self, it: Iterable[int], wrap=None) -&gt; Iterable[int]:
+        &#34;&#34;&#34;
+        Identical to `refinery.lib.argformats.DelayedNumbinArgument.inc`, but the counter
+        is subtracted from `it`.
+        &#34;&#34;&#34;
+        def delay(_):
+            k = cycle(range(number(wrap))) if wrap else count()
+            for item in cycle(it):
+                yield item - next(k)
+        return delay
+
+
+class DelayedRegexpArgument(DelayedArgument):
+    &#34;&#34;&#34;
+    A parser for regular expressions arguments.
+    &#34;&#34;&#34;
+
+    @DelayedArgumentDispatch
+    def handler(self, expression: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        The default handler encodes the input expression as latin-1 to return a binary
+        string regular expression.
+        Furthermore, the use of named patterns from `refinery.lib.patterns.formats` and
+        `refinery.lib.patterns.indicators` is possible by means of the extension format
+        `(??name)`. For example, the pattern `e:((??url)\\x00){4}` will match a sequence
+        of four URL strings which are all terminated with a null character.
+        &#34;&#34;&#34;
+        if &#39;(??&#39; in expression:
+            import re
+            from .patterns import formats, indicators
+
+            def replace(match):
+                name = match[1]
+                return &#39;(?:{})&#39;.format(formats.get(
+                    name, indicators.get(name, match[0])))
+
+            expression = re.sub(
+                R&#39;\(\?\?({}|{})\)&#39;.format(
+                    &#39;|&#39;.join(p.name for p in formats),
+                    &#39;|&#39;.join(p.name for p in indicators)
+                ),
+                replace,
+                expression
+            )
+
+        return expression.encode(&#39;latin-1&#39;)
+
+    @handler.register(&#39;yara&#39;)
+    def yara(self, pattern: bytes) -&gt; bytes:
+        &#34;&#34;&#34;
+        The handler `yara:pattern` converts YARA syntax wildcard hexadecimal expressions
+        into regular expressions. For example, `D?` is translated to `[\\xD0-\\xDF]`, the
+        expression `[2-6]` becomes `.{2,6}`, and `?D` becomes the following substring:
+        ```
+        [\\x0D\\x1D\\x2D\\x3D\\x4D\\x5D\\x6D\\x7D\\x8D\\x9D\\xAD\\xBD\\xCD\\xDD\\xED\\xFD]
+        ```
+        Only two-letter hexadecimal sequences with optional `?` wildcards and wildcard
+        ranges such as `[2-6]` are substituted, all other characters in the pattern are
+        left unchanged.
+        &#34;&#34;&#34;
+        import re
+
+        def y2r(match):
+            expr = match[0]
+            if expr == B&#39;??&#39;:
+                return B&#39;.&#39;
+            if B&#39;?&#39; not in expr:
+                return BR&#39;\x%s&#39; % expr
+            if expr.endswith(B&#39;?&#39;):
+                return BR&#39;[\x%c0-\x%cF]&#39; % (expr[0], expr[0])
+            return BR&#39;[%s]&#39; % BR&#39;&#39;.join(
+                BR&#39;\x%x%c&#39; % (k, expr[1]) for k in range(0x10)
+            )
+
+        def yara_range(rng):
+            return B&#39;.{%s}&#39; % B&#39;,&#39;.join(t.strip() for t in rng[1:-1].split(B&#39;-&#39;))
+
+        pattern = re.split(BR&#39;(\[\s*\d+(?:\s*-\s*\d+)?\s*\])&#39;, pattern)
+        pattern[0::2] = [re.sub(BR&#39;[A-F0-9?]{2}&#39;, y2r, c) for c in pattern[::2]]
+        pattern[1::2] = [yara_range(b) for b in pattern[1::2]]
+        return B&#39;&#39;.join(pattern)
+
+    @handler.register(&#39;escape&#39;)
+    def escape(self, str: bytes) -&gt; bytes:
+        &#34;&#34;&#34;
+        The handler `escape:str` returns a regular expression which matches the exact
+        string sequence given by `str`, with special regular expression control characters
+        escaped.
+        &#34;&#34;&#34;
+        import re
+        return re.escape(str)
+
+
+def numbin(expression: Union[int, str]) -&gt; Union[Iterable[int], DelayedNumbinArgument]:
+    &#34;&#34;&#34;
+    This is the argument parser type that uses `refinery.lib.argformats.DelayedNumbinArgument`.
+    &#34;&#34;&#34;
+    if isinstance(expression, int):
+        return (expression,)
+    arg = DelayedNumbinArgument(expression)
+    with suppress(TooLazy):
+        return arg()
+    return arg
+
+
+def regexp(expression: str) -&gt; Union[int, bytes, DelayedRegexpArgument]:
+    &#34;&#34;&#34;
+    This is the argument parser type that uses `refinery.lib.argformats.DelayedRegexpArgument`.
+    &#34;&#34;&#34;
+    arg = DelayedRegexpArgument(expression)
+    with suppress(TooLazy):
+        return arg()
+    return arg
+
+
+def OptionFactory(options: Mapping[str, Any], ignorecase: bool = False):
+    &#34;&#34;&#34;
+    The factory produces an argument parser type that accepts the keys of `options`
+    as possible values and causes the parsed argument to contain the corresponding
+    value from the `options` dictionary.
+    &#34;&#34;&#34;
+
+    class Option():
+        def __init__(self, name: str):
+            if ignorecase and name not in options:
+                needle = name.upper()
+                for key in options:
+                    if needle == key.upper():
+                        name = key
+                        break
+            if name not in options:
+                raise ValueError(&#39;The option %s is not one of these: %s&#39; % (name, list(options)))
+            self.mode = options[name]
+            self.name = name
+
+        def __eq__(self, other):
+            return str(other) == self.name
+
+        def __hash__(self):
+            return hash(self.name)
+
+        def __str__(self):
+            return self.name
+
+        def __repr__(self):
+            return self.name
+
+        @property
+        def value(self):
+            return self.mode
+
+    return Option
+
+
+def extract_options(symbols, prefix=&#39;MODE_&#39;, *exceptions):
+    &#34;&#34;&#34;
+    A helper function to extract all numeric constants from modules that have a certain
+    prefix. `refinery.units.crypto.cipher.StandardCipherUnit` uses this to extract the
+    block cipher modes of operation from block cipher modules of the `pycryptodome` library.
+    &#34;&#34;&#34;
+    candidates = {
+        k[len(prefix):]: getattr(symbols, k, None)
+        for k in dir(symbols) if k.startswith(prefix) and all(
+            e not in k for e in exceptions
+        )
+    }
+    return {k: v for k, v in candidates.items() if isinstance(v, int)}
+
+
+def pending(argument: Union[Any, Iterable[Any]]) -&gt; bool:
+    &#34;&#34;&#34;
+    This function returns a boolean value which indicates whether the given
+    argument is a `refinery.lib.argformats.LazyEvaluation`.
+    &#34;&#34;&#34;
+    if isinstance(argument, (list, tuple)):
+        return any(pending(x) for x in argument)
+    return isinstance(argument, LazyEvaluation)
+
+
+def manifest(argument: Union[Any, List[Any]], data: bytearray) -&gt; Union[Any, List[Any]]:
+    &#34;&#34;&#34;
+    Returns the manifestation of a `refinery.lib.argformats.LazyEvaluation`
+    on the given data. This function can change the data.
+    &#34;&#34;&#34;
+    if isinstance(argument, (list, tuple)):
+        return [manifest(x, data) for x in argument]
+    return argument(data) if isinstance(argument, LazyEvaluation) else argument</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-variables">Global variables</h2>
+<dl>
+<dt id="refinery.lib.argformats.number"><code class="name">var <span class="ident">number</span></code></dt>
+<dd>
+<section class="desc"><p>The singleton instance of a class that uses <code><a title="refinery.lib.argformats.PythonExpression" href="#refinery.lib.argformats.PythonExpression">PythonExpression</a></code>
+to parse expressions with integer value. This singleton can be slice accessed to
+create new number parsers, e.g. <code>number[0:]</code> will refuse to parse negative integer
+expressions.</p></section>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="refinery.lib.argformats.sliceobj"><code class="name flex">
+<span>def <span class="ident">sliceobj</span></span>(<span>expression)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Uses <code><a title="refinery.lib.argformats.PythonExpression" href="#refinery.lib.argformats.PythonExpression">PythonExpression</a></code> to parse slice expressions
+where the bounds can be given as arithmetic expressions. For example, this
+argument format type will process the string <code>0x11:0x11+4*0x34</code> as the slice
+object <code>slice(17, 225, None)</code>.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L182-L199" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def sliceobj(expression: Union[int, str]) -&gt; slice:
+    &#34;&#34;&#34;
+    Uses `refinery.lib.argformats.PythonExpression` to parse slice expressions
+    where the bounds can be given as arithmetic expressions. For example, this
+    argument format type will process the string `0x11:0x11+4*0x34` as the slice
+    object `slice(17, 225, None)`.
+    &#34;&#34;&#34;
+    if isinstance(expression, int):
+        sliced = (expression,)
+    else:
+        sliced = expression.split(&#39;:&#39;)
+        if not sliced or len(sliced) &gt; 3:
+            raise ArgumentTypeError(F&#39;the expression {expression} is not a valid slice.&#39;)
+        sliced = [None if not t else _PYTHON_EXPRESSION(t) for t in sliced]
+    if len(sliced) == 1:
+        k = sliced[0]
+        return slice(k, k + 1) if k + 1 else slice(k, None, None)
+    return slice(*sliced)</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.utf8"><code class="name flex">
+<span>def <span class="ident">utf8</span></span>(<span>x)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns the UTF8 encoding of the given string.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L230-L234" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def utf8(x):
+    &#34;&#34;&#34;
+    Returns the UTF8 encoding of the given string.
+    &#34;&#34;&#34;
+    return x.encode(&#39;UTF8&#39;)</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.multibin"><code class="name flex">
+<span>def <span class="ident">multibin</span></span>(<span>expression)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>This is the argument parser type that uses <code><a title="refinery.lib.argformats.DelayedBinaryArgument" href="#refinery.lib.argformats.DelayedBinaryArgument">DelayedBinaryArgument</a></code>.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L594-L603" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def multibin(expression: Union[str, bytes, bytearray]) -&gt; Union[bytes, DelayedBinaryArgument]:
+    &#34;&#34;&#34;
+    This is the argument parser type that uses `refinery.lib.argformats.DelayedBinaryArgument`.
+    &#34;&#34;&#34;
+    if not isinstance(expression, str):
+        return bytes(expression)
+    arg = DelayedBinaryArgument(expression)
+    with suppress(TooLazy):
+        return arg()
+    return arg</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.numbin"><code class="name flex">
+<span>def <span class="ident">numbin</span></span>(<span>expression)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>This is the argument parser type that uses <code><a title="refinery.lib.argformats.DelayedNumbinArgument" href="#refinery.lib.argformats.DelayedNumbinArgument">DelayedNumbinArgument</a></code>.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L801-L810" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def numbin(expression: Union[int, str]) -&gt; Union[Iterable[int], DelayedNumbinArgument]:
+    &#34;&#34;&#34;
+    This is the argument parser type that uses `refinery.lib.argformats.DelayedNumbinArgument`.
+    &#34;&#34;&#34;
+    if isinstance(expression, int):
+        return (expression,)
+    arg = DelayedNumbinArgument(expression)
+    with suppress(TooLazy):
+        return arg()
+    return arg</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.regexp"><code class="name flex">
+<span>def <span class="ident">regexp</span></span>(<span>expression)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>This is the argument parser type that uses <code><a title="refinery.lib.argformats.DelayedRegexpArgument" href="#refinery.lib.argformats.DelayedRegexpArgument">DelayedRegexpArgument</a></code>.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L813-L820" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def regexp(expression: str) -&gt; Union[int, bytes, DelayedRegexpArgument]:
+    &#34;&#34;&#34;
+    This is the argument parser type that uses `refinery.lib.argformats.DelayedRegexpArgument`.
+    &#34;&#34;&#34;
+    arg = DelayedRegexpArgument(expression)
+    with suppress(TooLazy):
+        return arg()
+    return arg</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.OptionFactory"><code class="name flex">
+<span>def <span class="ident">OptionFactory</span></span>(<span>options, ignorecase=False)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>The factory produces an argument parser type that accepts the keys of <code>options</code>
+as possible values and causes the parsed argument to contain the corresponding
+value from the <code>options</code> dictionary.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L823-L859" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def OptionFactory(options: Mapping[str, Any], ignorecase: bool = False):
+    &#34;&#34;&#34;
+    The factory produces an argument parser type that accepts the keys of `options`
+    as possible values and causes the parsed argument to contain the corresponding
+    value from the `options` dictionary.
+    &#34;&#34;&#34;
+
+    class Option():
+        def __init__(self, name: str):
+            if ignorecase and name not in options:
+                needle = name.upper()
+                for key in options:
+                    if needle == key.upper():
+                        name = key
+                        break
+            if name not in options:
+                raise ValueError(&#39;The option %s is not one of these: %s&#39; % (name, list(options)))
+            self.mode = options[name]
+            self.name = name
+
+        def __eq__(self, other):
+            return str(other) == self.name
+
+        def __hash__(self):
+            return hash(self.name)
+
+        def __str__(self):
+            return self.name
+
+        def __repr__(self):
+            return self.name
+
+        @property
+        def value(self):
+            return self.mode
+
+    return Option</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.extract_options"><code class="name flex">
+<span>def <span class="ident">extract_options</span></span>(<span>symbols, prefix='MODE_', *exceptions)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>A helper function to extract all numeric constants from modules that have a certain
+prefix. <code><a title="refinery.units.crypto.cipher.StandardCipherUnit" href="../units/crypto/cipher/index.html#refinery.units.crypto.cipher.StandardCipherUnit">StandardCipherUnit</a></code> uses this to extract the
+block cipher modes of operation from block cipher modules of the <code>pycryptodome</code> library.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L862-L874" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def extract_options(symbols, prefix=&#39;MODE_&#39;, *exceptions):
+    &#34;&#34;&#34;
+    A helper function to extract all numeric constants from modules that have a certain
+    prefix. `refinery.units.crypto.cipher.StandardCipherUnit` uses this to extract the
+    block cipher modes of operation from block cipher modules of the `pycryptodome` library.
+    &#34;&#34;&#34;
+    candidates = {
+        k[len(prefix):]: getattr(symbols, k, None)
+        for k in dir(symbols) if k.startswith(prefix) and all(
+            e not in k for e in exceptions
+        )
+    }
+    return {k: v for k, v in candidates.items() if isinstance(v, int)}</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.pending"><code class="name flex">
+<span>def <span class="ident">pending</span></span>(<span>argument)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>This function returns a boolean value which indicates whether the given
+argument is a <code><a title="refinery.lib.argformats.LazyEvaluation" href="#refinery.lib.argformats.LazyEvaluation">LazyEvaluation</a></code>.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L877-L884" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def pending(argument: Union[Any, Iterable[Any]]) -&gt; bool:
+    &#34;&#34;&#34;
+    This function returns a boolean value which indicates whether the given
+    argument is a `refinery.lib.argformats.LazyEvaluation`.
+    &#34;&#34;&#34;
+    if isinstance(argument, (list, tuple)):
+        return any(pending(x) for x in argument)
+    return isinstance(argument, LazyEvaluation)</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.manifest"><code class="name flex">
+<span>def <span class="ident">manifest</span></span>(<span>argument, data)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Returns the manifestation of a <code><a title="refinery.lib.argformats.LazyEvaluation" href="#refinery.lib.argformats.LazyEvaluation">LazyEvaluation</a></code>
+on the given data. This function can change the data.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L887-L894" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def manifest(argument: Union[Any, List[Any]], data: bytearray) -&gt; Union[Any, List[Any]]:
+    &#34;&#34;&#34;
+    Returns the manifestation of a `refinery.lib.argformats.LazyEvaluation`
+    on the given data. This function can change the data.
+    &#34;&#34;&#34;
+    if isinstance(argument, (list, tuple)):
+        return [manifest(x, data) for x in argument]
+    return argument(data) if isinstance(argument, LazyEvaluation) else argument</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="refinery.lib.argformats.PythonExpression"><code class="flex name class">
+<span>class <span class="ident">PythonExpression</span></span>
+<span>(</span><span>*variables)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Implements a parser for any Python expression with a prescribed set of variable
+names permitted to occur in the expression. The resulting object is a callable
+which can be given the string representation of such an expression. In turn, the
+result of this operation is either the value of the expression if no variables
+were present, or a callable which expects keyword arguments corresponding to the
+permitted variable names.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L86-L176" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class PythonExpression:
+    &#34;&#34;&#34;
+    Implements a parser for any Python expression with a prescribed set of variable
+    names permitted to occur in the expression. The resulting object is a callable
+    which can be given the string representation of such an expression. In turn, the
+    result of this operation is either the value of the expression if no variables
+    were present, or a callable which expects keyword arguments corresponding to the
+    permitted variable names.
+    &#34;&#34;&#34;
+
+    _ALLOWED_NODE_TYPES = {
+        ast.Add,
+        ast.BinOp,
+        ast.BitAnd,
+        ast.BitAnd,
+        ast.BitOr,
+        ast.BitXor,
+        ast.BoolOp,
+        ast.Compare,
+        ast.Constant,
+        ast.Div,
+        ast.Eq,
+        ast.FloorDiv,
+        ast.Gt,
+        ast.GtE,
+        ast.IfExp,
+        ast.Index,
+        ast.Invert,
+        ast.Is,
+        ast.IsNot,
+        ast.Load,
+        ast.LShift,
+        ast.Lt,
+        ast.LtE,
+        ast.List,
+        ast.MatMult,
+        ast.Mod,
+        ast.Mult,
+        ast.Name,
+        ast.Not,
+        ast.NotEq,
+        ast.Num,
+        ast.Or,
+        ast.Pow,
+        ast.RShift,
+        ast.Slice,
+        ast.Sub,
+        ast.Subscript,
+        ast.Tuple,
+        ast.UAdd,
+        ast.UnaryOp,
+        ast.USub
+    }
+
+    def __init__(self, *variables):
+        self.variables = set(variables)
+
+    def __call__(self, definition):
+        try:
+            expression = ast.parse(definition)
+            nodes = ast.walk(expression)
+        except Exception:
+            raise ArgumentTypeError(F&#39;The provided expression could not be parsed: {definition!s}&#39;)
+
+        if type(next(nodes)) != ast.Module:
+            raise ArgumentTypeError(F&#39;unknown error parsing the expression: {definition!s}&#39;)
+
+        if type(next(nodes)) != ast.Expr:
+            raise ArgumentTypeError(F&#39;not a valid Python expression: {definition!s}&#39;)
+
+        nodes = list(nodes)
+        types = set(type(node) for node in nodes)
+        names = set(node.id for node in nodes if type(node) == ast.Name)
+
+        if not types &lt;= self._ALLOWED_NODE_TYPES:
+            raise ArgumentTypeError(
+                &#39;the following operations are not allowed: {}&#39;.format(
+                    &#39;, &#39;.join(t.__name__ for t in types - self._ALLOWED_NODE_TYPES))
+            )
+
+        if not names &lt;= self.variables:
+            raise ArgumentTypeError(
+                &#39;the following variable names are unknown: {}&#39;.format(
+                    &#39;, &#39;.join(names - self.variables))
+            )
+
+        if not self.variables:
+            return eval(definition)
+        else:
+            def evaluator(**kw): return eval(definition, None, kw)
+            return evaluator</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.virtualaddr"><code class="flex name class">
+<span>class <span class="ident">virtualaddr</span></span>
+<span>(</span><span>address='0')</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Represents a virtual address; used by <code><a title="refinery.peslice" href="../index.html#refinery.peslice">peslice</a></code> and
+<code><a title="refinery.elfslice" href="../index.html#refinery.elfslice">elfslice</a></code> to reference offsets in executable file
+formats as they would appear in memory.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L202-L227" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class virtualaddr:
+    &#34;&#34;&#34;
+    Represents a virtual address; used by `refinery.peslice` and
+    `refinery.elfslice` to reference offsets in executable file
+    formats as they would appear in memory.
+    &#34;&#34;&#34;
+    def __init__(self, address=&#39;0&#39;):
+        try:
+            self.section, address = address.split(&#39;:&#39;)
+        except ValueError:
+            self.section = None
+        else:
+            if not address:
+                self.address = 0
+                return
+        try:
+            address = address.upper()
+            if address.endswith(&#39;H&#39;):
+                address = &#39;0x&#39; + address[:-1]
+            self.address = number[0:](address)
+        except ValueError:
+            pass
+        try:
+            self.address = int(address, 0x10)
+        except ValueError:
+            raise ArgumentTypeError(F&#39;could not parse {address} as hexadecimal integer&#39;)</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.IncompatibleHandler"><code class="flex name class">
+<span>class <span class="ident">IncompatibleHandler</span></span>
+<span>(</span><span>type_expected, type_observed, modifier)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>This exception is generated when <code><a title="refinery.lib.argformats.DelayedArgument" href="#refinery.lib.argformats.DelayedArgument">DelayedArgument</a></code> handlers
+are chained in an incompatible way.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L269-L283" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class IncompatibleHandler(ValueError):
+    &#34;&#34;&#34;
+    This exception is generated when `refinery.lib.argformats.DelayedArgument` handlers
+    are chained in an incompatible way.
+    &#34;&#34;&#34;
+    def __init__(self, type_expected, type_observed, modifier):
+        self.type_expected = type_expected
+        self.type_observed = type_observed
+        self.modifier = modifier
+        modifier_name = F&#39;handler {modifier}&#39; if modifier else &#39;default handler&#39;
+        super().__init__(&#39;{} received {} but expected {}&#39;.format(
+            modifier_name,
+            type_observed.__name__,
+            type_expected.__name__
+        ))</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.ValueError</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+<dt id="refinery.lib.argformats.TooLazy"><code class="flex name class">
+<span>class <span class="ident">TooLazy</span></span>
+<span>(</span><span>...)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Exception which indicates that an argument parser requires input data before it can be
+evaluated.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L286-L291" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class TooLazy(Exception):
+    &#34;&#34;&#34;
+    Exception which indicates that an argument parser requires input data before it can be
+    evaluated.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+<dt id="refinery.lib.argformats.VariableMissing"><code class="flex name class">
+<span>class <span class="ident">VariableMissing</span></span>
+<span>(</span><span>name)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Unspecified run-time error.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L294-L297" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class VariableMissing(RuntimeError):
+    def __init__(self, name):
+        super().__init__(F&#39;The variable {name} is not defined.&#39;)
+        self.name = name</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>builtins.RuntimeError</li>
+<li>builtins.Exception</li>
+<li>builtins.BaseException</li>
+</ul>
+</dd>
+<dt id="refinery.lib.argformats.LazyEvaluation"><code class="flex name class">
+<span>class <span class="ident">LazyEvaluation</span></span>
+</code></dt>
+<dd>
+<section class="desc"><p>Empty parent class for any unit that throws <code><a title="refinery.lib.argformats.TooLazy" href="#refinery.lib.argformats.TooLazy">TooLazy</a></code>.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L300-L304" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class LazyEvaluation:
+    &#34;&#34;&#34;
+    Empty parent class for any unit that throws `refinery.lib.argformats.TooLazy`.
+    &#34;&#34;&#34;
+    pass</code></pre>
+</details>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="refinery.lib.argformats.DelayedArgument" href="#refinery.lib.argformats.DelayedArgument">DelayedArgument</a></li>
+</ul>
+</dd>
+<dt id="refinery.lib.argformats.DelayedArgumentDispatch"><code class="flex name class">
+<span>class <span class="ident">DelayedArgumentDispatch</span></span>
+<span>(</span><span>method)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>This class is used as a decorator for the default handler of classes that inherit from
+<code><a title="refinery.lib.argformats.DelayedArgument" href="#refinery.lib.argformats.DelayedArgument">DelayedArgument</a></code>. After decorating the routine <code>handler</code> with
+<code><a title="refinery.lib.argformats.DelayedArgumentDispatch" href="#refinery.lib.argformats.DelayedArgumentDispatch">DelayedArgumentDispatch</a></code>, <code>handler.register</code> can be used to
+register additional handlers.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L307-L369" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class DelayedArgumentDispatch:
+    &#34;&#34;&#34;
+    This class is used as a decorator for the default handler of classes that inherit from
+    `refinery.lib.argformats.DelayedArgument`. After decorating the routine `handler` with
+    `refinery.lib.argformats.DelayedArgumentDispatch`, `handler.register` can be used to
+    register additional handlers.
+    &#34;&#34;&#34;
+    def __init__(self, method):
+        update_wrapper(self, method)
+        self.default = method
+        self.handlers = {}
+        self.final = {}
+        self.units = {}
+
+    def _get_unit(self, name, *args):
+        name = name.replace(&#39;-&#39;, &#39;_&#39;)
+        uhash = hash((name,) + args)
+        if uhash in self.units:
+            return self.units[uhash]
+        try:
+            unit = resolve(name)
+        except EntryNotFound:
+            return None
+        else:
+            unit = unit and unit.assemble(*args).detach()
+            self.units[uhash] = unit
+            return unit
+
+    def __get__(self, instance, instancetype):
+        # We do not know the class whose methods we are decorating.
+        self.instance = instance
+        return self
+
+    def __call__(self, data, modifier=None, *args):
+        try:
+            handler = self.default if modifier is None else self.handlers[modifier]
+            return handler(self.instance, data, *args)
+        except KeyError:
+            unit = self._get_unit(modifier, *args)
+            if not unit:
+                raise ArgumentTypeError(F&#39;failed to build unit {modifier}&#39;)
+            result = unit.process(data)
+            return result if isbuffer(result) else B&#39;&#39;.join(result)
+
+    def can_handle(self, modifier, *args):
+        return modifier in self.handlers or bool(self._get_unit(modifier, *args))
+
+    def terminates(self, modifier):
+        &#34;&#34;&#34;
+        Indicates whether the given registered modifier is final.
+        &#34;&#34;&#34;
+        return self.final.get(modifier, False)
+
+    def register(self, *modifiers, final=False):
+        &#34;&#34;&#34;
+        Registers a new modifier handler.
+        &#34;&#34;&#34;
+        def _register(method):
+            for modifier in modifiers:
+                self.handlers[modifier] = method
+                self.final[modifier] = final
+            return method
+        return _register</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="refinery.lib.argformats.DelayedArgumentDispatch.can_handle"><code class="name flex">
+<span>def <span class="ident">can_handle</span></span>(<span>self, modifier, *args)</span>
+</code></dt>
+<dd>
+<section class="desc"></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L351-L352" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def can_handle(self, modifier, *args):
+    return modifier in self.handlers or bool(self._get_unit(modifier, *args))</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.DelayedArgumentDispatch.terminates"><code class="name flex">
+<span>def <span class="ident">terminates</span></span>(<span>self, modifier)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Indicates whether the given registered modifier is final.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L354-L358" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def terminates(self, modifier):
+    &#34;&#34;&#34;
+    Indicates whether the given registered modifier is final.
+    &#34;&#34;&#34;
+    return self.final.get(modifier, False)</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.DelayedArgumentDispatch.register"><code class="name flex">
+<span>def <span class="ident">register</span></span>(<span>self, *modifiers, final=False)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Registers a new modifier handler.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L360-L369" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def register(self, *modifiers, final=False):
+    &#34;&#34;&#34;
+    Registers a new modifier handler.
+    &#34;&#34;&#34;
+    def _register(method):
+        for modifier in modifiers:
+            self.handlers[modifier] = method
+            self.final[modifier] = final
+        return method
+    return _register</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="refinery.lib.argformats.DelayedArgument"><code class="flex name class">
+<span>class <span class="ident">DelayedArgument</span></span>
+<span>(</span><span>expression)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>This base class for delayed argument parsers implements parsing
+expressions into supported modifiers.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L372-L468" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class DelayedArgument(LazyEvaluation):
+    &#34;&#34;&#34;
+    This base class for delayed argument parsers implements parsing
+    expressions into supported modifiers.
+    &#34;&#34;&#34;
+    _ARG_BEGIN_TOKEN = &#39;[&#39;
+    _ARG_CLOSE_TOKEN = &#39;]&#39;
+    _ARG_SPLIT_TOKEN = &#39;,&#39;
+
+    def __init__(self, expression: str):
+        self.modifiers = []
+        self.finalized = False
+        if not isinstance(self.handler, DelayedArgumentDispatch):
+            raise NotImplementedError(
+                &#39;The default handler is required to be a &#39;
+                &#39;DelayedArgumentDispatch instance.&#39;
+            )
+        while not self.finalized:
+            name, arguments, newexpr = self._split_modifier(expression)
+            if not name or not self.handler.can_handle(name, *arguments):
+                break
+            self.modifiers.append((name, arguments))
+            expression = newexpr
+            if self.handler.terminates(name):
+                self.finalized = True
+        self.seed = expression
+        self.modifiers.reverse()
+
+    def _split_modifier(self, expression: str) -&gt; Tuple[Optional[str], Tuple[str], str]:
+        brackets = 0
+        name = None
+        argoffset = 0
+        arguments = ()
+        for k, character in enumerate(expression):
+            if character == self._ARG_BEGIN_TOKEN:
+                if not brackets:
+                    if argoffset:
+                        # This is the second time we encounter what appears to be an
+                        # argument list, before the modifier has ended. This is not
+                        # possible, and we decide to assume that no modifier was used.
+                        break
+                    name = expression[:k]
+                    argoffset = k + 1
+                brackets += 1
+                continue
+            if character == self._ARG_CLOSE_TOKEN:
+                if brackets == 1:
+                    arguments += expression[argoffset:k],
+                elif not brackets:
+                    if argoffset:
+                        raise ArgumentTypeError(
+                            F&#39;Unable to parse {expression}, too many closing brackets.&#39;
+                        )
+                    else:
+                        break
+                brackets -= 1
+                continue
+            if character == self._ARG_SPLIT_TOKEN:
+                if brackets == 1:
+                    arguments += expression[argoffset:k],
+                    argoffset = k + 1
+            if character == &#39;:&#39; and not brackets:
+                if name is None:
+                    name = expression[:k]
+                return name, arguments, expression[k + 1:]
+        return None, (), expression
+
+    def __call__(self, data: Optional[Chunk] = None) -&gt; bytes:
+        arg = self.seed
+        mod = iter(self.modifiers)
+        if not self.finalized:
+            mod = chain(((None, ()),), mod)
+        for name, arguments in mod:
+            if isbuffer(arg):
+                arg = Chunk(arg)
+                with suppress(AttributeError):
+                    arg.meta.update(data.meta)
+            try:
+                arg = self.handler(arg, name, *arguments)
+            except VariableMissing as v:
+                if data is not None:
+                    raise
+                raise TooLazy from v
+            except Exception as E:
+                raise ArgumentTypeError(F&#39;failed to apply modifier {name} to incoming data: {E}&#39;) from E
+            if callable(arg):
+                if data is None:
+                    raise TooLazy
+                arg = arg(data)
+        return arg
+
+    def handler(self, expression: str):
+        &#34;&#34;&#34;
+        This method is overwritten by children of `refinery.lib.argformats.DelayedArgument`
+        to implement the default handler.
+        &#34;&#34;&#34;
+        raise NotImplementedError</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="refinery.lib.argformats.LazyEvaluation" href="#refinery.lib.argformats.LazyEvaluation">LazyEvaluation</a></li>
+</ul>
+<h3>Subclasses</h3>
+<ul class="hlist">
+<li><a title="refinery.lib.argformats.DelayedBinaryArgument" href="#refinery.lib.argformats.DelayedBinaryArgument">DelayedBinaryArgument</a></li>
+<li><a title="refinery.lib.argformats.DelayedNumbinArgument" href="#refinery.lib.argformats.DelayedNumbinArgument">DelayedNumbinArgument</a></li>
+<li><a title="refinery.lib.argformats.DelayedRegexpArgument" href="#refinery.lib.argformats.DelayedRegexpArgument">DelayedRegexpArgument</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="refinery.lib.argformats.DelayedArgument.handler"><code class="name flex">
+<span>def <span class="ident">handler</span></span>(<span>self, expression)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>This method is overwritten by children of <code><a title="refinery.lib.argformats.DelayedArgument" href="#refinery.lib.argformats.DelayedArgument">DelayedArgument</a></code>
+to implement the default handler.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L463-L468" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">def handler(self, expression: str):
+    &#34;&#34;&#34;
+    This method is overwritten by children of `refinery.lib.argformats.DelayedArgument`
+    to implement the default handler.
+    &#34;&#34;&#34;
+    raise NotImplementedError</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="refinery.lib.argformats.DelayedBinaryArgument"><code class="flex name class">
+<span>class <span class="ident">DelayedBinaryArgument</span></span>
+<span>(</span><span>expression)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>This base class for delayed argument parsers implements parsing
+expressions into supported modifiers.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L471-L591" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class DelayedBinaryArgument(DelayedArgument):
+
+    @DelayedArgumentDispatch
+    def handler(self, expr: str) -&gt; bytes:
+        try:
+            return open(expr, &#39;rb&#39;).read()
+        except Exception:
+            pass
+        return utf8(expr)
+
+    @handler.register(&#39;s&#39;, final=True)
+    def s(self, string: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        The final modifier `s:string` returns the UTF-8 encoded representation of `string`.
+        &#34;&#34;&#34;
+        return string.encode(&#39;UTF8&#39;)
+
+    @handler.register(&#39;u&#39;, final=True)
+    def u(self, string: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        The final modifier `u:string` returns the UTF16 (little endian without BOM) encoded
+        representation of `string`.
+        &#34;&#34;&#34;
+        return string.encode(&#39;UTF-16LE&#39;)
+
+    @handler.register(&#39;a&#39;, final=True)
+    def a(self, string: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        The final modifier `a:string` returns the latin-1 encoded representation of `string`.
+        &#34;&#34;&#34;
+        return string.encode(&#39;LATIN-1&#39;)
+
+    @handler.register(&#39;H&#39;, &#39;h&#39;, final=True)
+    def h(self, string: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        The final modifier `h:string` (or `H:string`) returns the hex decoding of `string`.
+        &#34;&#34;&#34;
+        import base64
+        return base64.b16decode(string, casefold=True)
+
+    @handler.register(&#39;f&#39;, &#39;file&#39;, final=True)
+    def file(self, path: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        The final modifier `f:path` or `file:path` returns the contents of the file located
+        at the given path.
+        &#34;&#34;&#34;
+        return open(path, &#39;rb&#39;).read()
+
+    @handler.register(&#39;range&#39;, final=True)
+    def range(self, region: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        Implements the final modifier `range:bounds` to generate a sequence of bytes, where
+        `bounds` is parsed as a `refinery.lib.argformats.sliceobj` with one exception: If
+        `bounds` is just a single integer, it is interpreted as the upper bound for a sequence
+        of bytes starting at zero.
+        &#34;&#34;&#34;
+        try:
+            bounds = number(region)
+            return bytearray(range(bounds))
+        except ValueError:
+            pass
+        bounds = sliceobj(region)
+        if bounds.stop is None:
+            raise ArgumentTypeError(&#39;cannot generate unbounded byte sequence.&#39;)
+        return bytearray(range(bounds.start or 0, bounds.stop, bounds.step or 1))
+
+    @handler.register(&#39;c&#39;, &#39;copy&#39;, final=True)
+    def copy(self, region: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        Implements the final modifier `c:region` or `copy:region`, where `region` is parsed
+        as a `refinery.lib.argformats.sliceobj`. The result contains the corresponding slice
+        of the input data.
+        &#34;&#34;&#34;
+        bounds = sliceobj(region)
+        return lambda d: d[bounds]
+
+    @handler.register(&#39;x&#39;, &#39;cut&#39;, final=True)
+    def cut(self, region: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        `x:region` and `cut:region` work like `refinery.lib.argformats.DelayedBinaryArgument.copy`,
+        but the corresponding bytes are also removed from the input data.
+        &#34;&#34;&#34;
+        def extract(data: bytearray):
+            result = data[bounds]
+            data[bounds] = []
+            return result
+        bounds = sliceobj(region)
+        return extract
+
+    def _interpret_variable(self, name: str, obj: Any):
+        if isinstance(obj, (bytes, bytearray, memoryview)):
+            return obj
+        if isinstance(obj, str):
+            return utf8(obj)
+        raise ValueError(F&#39;The meta variable {name} is of type {type(obj).__name__} and no conversion to bytes is known.&#39;)
+
+    @handler.register(&#39;var&#39;, final=True)
+    def meta_get(self, name: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        Contains the value of a meta variable. The variable remains attached to the chunk.
+        &#34;&#34;&#34;
+        def extract(data: Chunk):
+            try:
+                result = data.meta[name]
+            except KeyError as K:
+                raise VariableMissing(name) from K
+            return self._interpret_variable(name, result)
+        return extract
+
+    @handler.register(&#39;pop&#39;, final=True)
+    def meta_pop(self, name: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        Extracts data from a meta field in a chunk.
+        &#34;&#34;&#34;
+        def extract(data: Chunk):
+            try:
+                result = data.meta.pop(name)
+            except KeyError as K:
+                raise VariableMissing(name) from K
+            return self._interpret_variable(name, result)
+        return extract</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="refinery.lib.argformats.DelayedArgument" href="#refinery.lib.argformats.DelayedArgument">DelayedArgument</a></li>
+<li><a title="refinery.lib.argformats.LazyEvaluation" href="#refinery.lib.argformats.LazyEvaluation">LazyEvaluation</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="refinery.lib.argformats.DelayedBinaryArgument.s"><code class="name flex">
+<span>def <span class="ident">s</span></span>(<span>self, string)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>The final modifier <code>s:string</code> returns the UTF-8 encoded representation of <code>string</code>.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L481-L486" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@handler.register(&#39;s&#39;, final=True)
+def s(self, string: str) -&gt; bytes:
+    &#34;&#34;&#34;
+    The final modifier `s:string` returns the UTF-8 encoded representation of `string`.
+    &#34;&#34;&#34;
+    return string.encode(&#39;UTF8&#39;)</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.DelayedBinaryArgument.u"><code class="name flex">
+<span>def <span class="ident">u</span></span>(<span>self, string)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>The final modifier <code>u:string</code> returns the UTF16 (little endian without BOM) encoded
+representation of <code>string</code>.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L488-L494" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@handler.register(&#39;u&#39;, final=True)
+def u(self, string: str) -&gt; bytes:
+    &#34;&#34;&#34;
+    The final modifier `u:string` returns the UTF16 (little endian without BOM) encoded
+    representation of `string`.
+    &#34;&#34;&#34;
+    return string.encode(&#39;UTF-16LE&#39;)</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.DelayedBinaryArgument.a"><code class="name flex">
+<span>def <span class="ident">a</span></span>(<span>self, string)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>The final modifier <code>a:string</code> returns the latin-1 encoded representation of <code>string</code>.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L496-L501" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@handler.register(&#39;a&#39;, final=True)
+def a(self, string: str) -&gt; bytes:
+    &#34;&#34;&#34;
+    The final modifier `a:string` returns the latin-1 encoded representation of `string`.
+    &#34;&#34;&#34;
+    return string.encode(&#39;LATIN-1&#39;)</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.DelayedBinaryArgument.h"><code class="name flex">
+<span>def <span class="ident">h</span></span>(<span>self, string)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>The final modifier <code>h:string</code> (or <code>H:string</code>) returns the hex decoding of <code>string</code>.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L503-L509" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@handler.register(&#39;H&#39;, &#39;h&#39;, final=True)
+def h(self, string: str) -&gt; bytes:
+    &#34;&#34;&#34;
+    The final modifier `h:string` (or `H:string`) returns the hex decoding of `string`.
+    &#34;&#34;&#34;
+    import base64
+    return base64.b16decode(string, casefold=True)</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.DelayedBinaryArgument.file"><code class="name flex">
+<span>def <span class="ident">file</span></span>(<span>self, path)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>The final modifier <code>f:path</code> or <code>file:path</code> returns the contents of the file located
+at the given path.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L511-L517" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@handler.register(&#39;f&#39;, &#39;file&#39;, final=True)
+def file(self, path: str) -&gt; bytes:
+    &#34;&#34;&#34;
+    The final modifier `f:path` or `file:path` returns the contents of the file located
+    at the given path.
+    &#34;&#34;&#34;
+    return open(path, &#39;rb&#39;).read()</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.DelayedBinaryArgument.range"><code class="name flex">
+<span>def <span class="ident">range</span></span>(<span>self, region)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Implements the final modifier <code>range:bounds</code> to generate a sequence of bytes, where
+<code>bounds</code> is parsed as a <code><a title="refinery.lib.argformats.sliceobj" href="#refinery.lib.argformats.sliceobj">sliceobj()</a></code> with one exception: If
+<code>bounds</code> is just a single integer, it is interpreted as the upper bound for a sequence
+of bytes starting at zero.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L519-L535" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@handler.register(&#39;range&#39;, final=True)
+def range(self, region: str) -&gt; bytes:
+    &#34;&#34;&#34;
+    Implements the final modifier `range:bounds` to generate a sequence of bytes, where
+    `bounds` is parsed as a `refinery.lib.argformats.sliceobj` with one exception: If
+    `bounds` is just a single integer, it is interpreted as the upper bound for a sequence
+    of bytes starting at zero.
+    &#34;&#34;&#34;
+    try:
+        bounds = number(region)
+        return bytearray(range(bounds))
+    except ValueError:
+        pass
+    bounds = sliceobj(region)
+    if bounds.stop is None:
+        raise ArgumentTypeError(&#39;cannot generate unbounded byte sequence.&#39;)
+    return bytearray(range(bounds.start or 0, bounds.stop, bounds.step or 1))</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.DelayedBinaryArgument.copy"><code class="name flex">
+<span>def <span class="ident">copy</span></span>(<span>self, region)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Implements the final modifier <code>c:region</code> or <code>copy:region</code>, where <code>region</code> is parsed
+as a <code><a title="refinery.lib.argformats.sliceobj" href="#refinery.lib.argformats.sliceobj">sliceobj()</a></code>. The result contains the corresponding slice
+of the input data.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L537-L545" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@handler.register(&#39;c&#39;, &#39;copy&#39;, final=True)
+def copy(self, region: str) -&gt; bytes:
+    &#34;&#34;&#34;
+    Implements the final modifier `c:region` or `copy:region`, where `region` is parsed
+    as a `refinery.lib.argformats.sliceobj`. The result contains the corresponding slice
+    of the input data.
+    &#34;&#34;&#34;
+    bounds = sliceobj(region)
+    return lambda d: d[bounds]</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.DelayedBinaryArgument.cut"><code class="name flex">
+<span>def <span class="ident">cut</span></span>(<span>self, region)</span>
+</code></dt>
+<dd>
+<section class="desc"><p><code>x:region</code> and <code>cut:region</code> work like <code><a title="refinery.lib.argformats.DelayedBinaryArgument.copy" href="#refinery.lib.argformats.DelayedBinaryArgument.copy">DelayedBinaryArgument.copy()</a></code>,
+but the corresponding bytes are also removed from the input data.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L547-L558" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@handler.register(&#39;x&#39;, &#39;cut&#39;, final=True)
+def cut(self, region: str) -&gt; bytes:
+    &#34;&#34;&#34;
+    `x:region` and `cut:region` work like `refinery.lib.argformats.DelayedBinaryArgument.copy`,
+    but the corresponding bytes are also removed from the input data.
+    &#34;&#34;&#34;
+    def extract(data: bytearray):
+        result = data[bounds]
+        data[bounds] = []
+        return result
+    bounds = sliceobj(region)
+    return extract</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.DelayedBinaryArgument.meta_get"><code class="name flex">
+<span>def <span class="ident">meta_get</span></span>(<span>self, name)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Contains the value of a meta variable. The variable remains attached to the chunk.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L567-L578" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@handler.register(&#39;var&#39;, final=True)
+def meta_get(self, name: str) -&gt; bytes:
+    &#34;&#34;&#34;
+    Contains the value of a meta variable. The variable remains attached to the chunk.
+    &#34;&#34;&#34;
+    def extract(data: Chunk):
+        try:
+            result = data.meta[name]
+        except KeyError as K:
+            raise VariableMissing(name) from K
+        return self._interpret_variable(name, result)
+    return extract</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.DelayedBinaryArgument.meta_pop"><code class="name flex">
+<span>def <span class="ident">meta_pop</span></span>(<span>self, name)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Extracts data from a meta field in a chunk.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L580-L591" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@handler.register(&#39;pop&#39;, final=True)
+def meta_pop(self, name: str) -&gt; bytes:
+    &#34;&#34;&#34;
+    Extracts data from a meta field in a chunk.
+    &#34;&#34;&#34;
+    def extract(data: Chunk):
+        try:
+            result = data.meta.pop(name)
+        except KeyError as K:
+            raise VariableMissing(name) from K
+        return self._interpret_variable(name, result)
+    return extract</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="refinery.lib.argformats.DelayedArgument" href="#refinery.lib.argformats.DelayedArgument">DelayedArgument</a></b></code>:
+<ul class="hlist">
+<li><code><a title="refinery.lib.argformats.DelayedArgument.handler" href="#refinery.lib.argformats.DelayedArgument.handler">handler</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="refinery.lib.argformats.DelayedNumbinArgument"><code class="flex name class">
+<span>class <span class="ident">DelayedNumbinArgument</span></span>
+<span>(</span><span>expression)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>A parser for sequences of numeric arguments. As <code><a title="refinery.lib.argformats.DelayedNumbinArgument.handler" href="#refinery.lib.argformats.DelayedNumbinArgument.handler">DelayedNumbinArgument.handler()</a></code>
+uses <code><a title="refinery.lib.argformats.multibin" href="#refinery.lib.argformats.multibin">multibin()</a></code>, it is possible to use any handler specified in
+<code><a title="refinery.lib.argformats.DelayedBinaryArgument" href="#refinery.lib.argformats.DelayedBinaryArgument">DelayedBinaryArgument</a></code> as long as these handlers precede any of the handlers
+defined here.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L606-L717" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class DelayedNumbinArgument(DelayedArgument):
+    &#34;&#34;&#34;
+    A parser for sequences of numeric arguments. As `refinery.lib.argformats.DelayedNumbinArgument.handler`
+    uses `refinery.lib.argformats.multibin`, it is possible to use any handler specified in
+    `refinery.lib.argformats.DelayedBinaryArgument` as long as these handlers precede any of the handlers
+    defined here.
+    &#34;&#34;&#34;
+
+    _EV_PARSER = PythonExpression(&#39;N&#39;)
+
+    def _mbin(self, expr: str) -&gt; bytes:
+        binary = multibin(expr)
+        if not binary:
+            raise ArgumentTypeError(&#39;received empty binary argument&#39;)
+        return binary
+
+    def _iter(self, unknown):
+        if hasattr(unknown, &#39;__iter__&#39;):
+            it = list(unknown)
+            if all(isinstance(t, int) for t in it):
+                return it
+        if isinstance(unknown, int):
+            return (unknown,)
+        raise ArgumentTypeError(
+            F&#39;numbin parser encountered {unknown} of type {type(unknown).__name__}, &#39;
+            F&#39;but only integers are supported.&#39;
+        )
+
+    @DelayedArgumentDispatch
+    def handler(self, expression: str) -&gt; Iterable[int]:
+        &#34;&#34;&#34;
+        The default handler: Attempts to parse the input expression as a sequence of integers
+        and uses `refinery.lib.argformats.multibin` to parse it if that fails.
+        &#34;&#34;&#34;
+        try:
+            ev = self._EV_PARSER(expression)
+            return self._iter(ev())
+        except Exception:
+            return self._mbin(expression)
+
+    @handler.register(&#39;ev&#39;)
+    def ev(self, expression: Union[str, ByteString]) -&gt; Iterable[int]:
+        &#34;&#34;&#34;
+        Final modifier `ev:expression`; uses a `refinery.lib.argformats.PythonExpression`
+        parser to process expressions that may contain the variable `N` whose value will be
+        the size of the input data.
+        &#34;&#34;&#34;
+        if not isinstance(expression, str):
+            try:
+                expression = expression.decode(&#39;ascii&#39;)
+            except AttributeError:
+                return expression
+        ev = self._EV_PARSER(expression)
+        try:
+            return self._iter(ev())
+        except Exception:
+            return lambda d: self._iter(ev(N=len(d)))
+
+    @handler.register(&#39;unpack&#39;, final=True)
+    def unpack(self, expression: str) -&gt; Iterable[int]:
+        &#34;&#34;&#34;
+        Final modifier `unpack:[#]size:expression`; uses `refinery.lib.chunks.unpack` to
+        convert a sequence of bytes into a sequence of numbers by unpacking them. The `expression`
+        parameter is parsed with `refinery.lib.argformats.multibin` yielding this byte string.
+        The `size` has to be an integer expression specifying the size of each encoded number in
+        bytes. The optional hash tag modifier preceding the size indicates that the parser
+        should use big endian rather than the default, little endian.
+        &#34;&#34;&#34;
+        from .chunks import unpack
+        size, expression = expression.split(&#39;:&#39;, 1)
+        bigendian = False
+        if size.startswith(&#39;#&#39;):
+            bigendian = True
+            size = size[1:]
+        try:
+            size = int(size, 0)
+        except ValueError as E:
+            raise ArgumentTypeError(
+                &#39;the syntax is unpack:[!]size:bytes where size is an integer &#39;
+                &#39;and bytes a multibin expression. You can specify the exclamation &#39;
+                &#39;mark to use network (big endian) byte order.&#39;
+            ) from E
+        mbin = self._mbin(expression)
+        if not callable(mbin):
+            return list(unpack(mbin, size, bigendian))
+        return lambda d: list(unpack(mbin(d), size, bigendian))
+
+    @handler.register(&#39;inc&#39;)
+    def inc(self, it: Iterable[int], wrap=None) -&gt; Iterable[int]:
+        &#34;&#34;&#34;
+        The modifier `inc:it` or `inc(wrap):it` expects a sequence `it` of integers
+        (a binary string is interpreted as the sequence of its byte values), iterates it
+        cyclically and perpetually adds an increasing counter to the result. If `wrap`
+        is specified, then the counter is reduced modulo this number.
+        &#34;&#34;&#34;
+        def delay(_):
+            k = cycle(range(number(wrap))) if wrap else count()
+            for item in cycle(it):
+                yield item + next(k)
+        return delay
+
+    @handler.register(&#39;dec&#39;)
+    def dec(self, it: Iterable[int], wrap=None) -&gt; Iterable[int]:
+        &#34;&#34;&#34;
+        Identical to `refinery.lib.argformats.DelayedNumbinArgument.inc`, but the counter
+        is subtracted from `it`.
+        &#34;&#34;&#34;
+        def delay(_):
+            k = cycle(range(number(wrap))) if wrap else count()
+            for item in cycle(it):
+                yield item - next(k)
+        return delay</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="refinery.lib.argformats.DelayedArgument" href="#refinery.lib.argformats.DelayedArgument">DelayedArgument</a></li>
+<li><a title="refinery.lib.argformats.LazyEvaluation" href="#refinery.lib.argformats.LazyEvaluation">LazyEvaluation</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="refinery.lib.argformats.DelayedNumbinArgument.handler"><code class="name flex">
+<span>def <span class="ident">handler</span></span>(<span>self, expression)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>The default handler: Attempts to parse the input expression as a sequence of integers
+and uses <code><a title="refinery.lib.argformats.multibin" href="#refinery.lib.argformats.multibin">multibin()</a></code> to parse it if that fails.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L634-L644" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@DelayedArgumentDispatch
+def handler(self, expression: str) -&gt; Iterable[int]:
+    &#34;&#34;&#34;
+    The default handler: Attempts to parse the input expression as a sequence of integers
+    and uses `refinery.lib.argformats.multibin` to parse it if that fails.
+    &#34;&#34;&#34;
+    try:
+        ev = self._EV_PARSER(expression)
+        return self._iter(ev())
+    except Exception:
+        return self._mbin(expression)</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.DelayedNumbinArgument.ev"><code class="name flex">
+<span>def <span class="ident">ev</span></span>(<span>self, expression)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Final modifier <code>ev:expression</code>; uses a <code><a title="refinery.lib.argformats.PythonExpression" href="#refinery.lib.argformats.PythonExpression">PythonExpression</a></code>
+parser to process expressions that may contain the variable <code>N</code> whose value will be
+the size of the input data.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L646-L662" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@handler.register(&#39;ev&#39;)
+def ev(self, expression: Union[str, ByteString]) -&gt; Iterable[int]:
+    &#34;&#34;&#34;
+    Final modifier `ev:expression`; uses a `refinery.lib.argformats.PythonExpression`
+    parser to process expressions that may contain the variable `N` whose value will be
+    the size of the input data.
+    &#34;&#34;&#34;
+    if not isinstance(expression, str):
+        try:
+            expression = expression.decode(&#39;ascii&#39;)
+        except AttributeError:
+            return expression
+    ev = self._EV_PARSER(expression)
+    try:
+        return self._iter(ev())
+    except Exception:
+        return lambda d: self._iter(ev(N=len(d)))</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.DelayedNumbinArgument.unpack"><code class="name flex">
+<span>def <span class="ident">unpack</span></span>(<span>self, expression)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Final modifier <code>unpack:[#]size:expression</code>; uses <code><a title="refinery.lib.chunks.unpack" href="chunks.html#refinery.lib.chunks.unpack">unpack()</a></code> to
+convert a sequence of bytes into a sequence of numbers by unpacking them. The <code>expression</code>
+parameter is parsed with <code><a title="refinery.lib.argformats.multibin" href="#refinery.lib.argformats.multibin">multibin()</a></code> yielding this byte string.
+The <code>size</code> has to be an integer expression specifying the size of each encoded number in
+bytes. The optional hash tag modifier preceding the size indicates that the parser
+should use big endian rather than the default, little endian.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L664-L691" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@handler.register(&#39;unpack&#39;, final=True)
+def unpack(self, expression: str) -&gt; Iterable[int]:
+    &#34;&#34;&#34;
+    Final modifier `unpack:[#]size:expression`; uses `refinery.lib.chunks.unpack` to
+    convert a sequence of bytes into a sequence of numbers by unpacking them. The `expression`
+    parameter is parsed with `refinery.lib.argformats.multibin` yielding this byte string.
+    The `size` has to be an integer expression specifying the size of each encoded number in
+    bytes. The optional hash tag modifier preceding the size indicates that the parser
+    should use big endian rather than the default, little endian.
+    &#34;&#34;&#34;
+    from .chunks import unpack
+    size, expression = expression.split(&#39;:&#39;, 1)
+    bigendian = False
+    if size.startswith(&#39;#&#39;):
+        bigendian = True
+        size = size[1:]
+    try:
+        size = int(size, 0)
+    except ValueError as E:
+        raise ArgumentTypeError(
+            &#39;the syntax is unpack:[!]size:bytes where size is an integer &#39;
+            &#39;and bytes a multibin expression. You can specify the exclamation &#39;
+            &#39;mark to use network (big endian) byte order.&#39;
+        ) from E
+    mbin = self._mbin(expression)
+    if not callable(mbin):
+        return list(unpack(mbin, size, bigendian))
+    return lambda d: list(unpack(mbin(d), size, bigendian))</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.DelayedNumbinArgument.inc"><code class="name flex">
+<span>def <span class="ident">inc</span></span>(<span>self, it, wrap=None)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>The modifier <code>inc:it</code> or <code>inc(wrap):it</code> expects a sequence <code>it</code> of integers
+(a binary string is interpreted as the sequence of its byte values), iterates it
+cyclically and perpetually adds an increasing counter to the result. If <code>wrap</code>
+is specified, then the counter is reduced modulo this number.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L693-L705" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@handler.register(&#39;inc&#39;)
+def inc(self, it: Iterable[int], wrap=None) -&gt; Iterable[int]:
+    &#34;&#34;&#34;
+    The modifier `inc:it` or `inc(wrap):it` expects a sequence `it` of integers
+    (a binary string is interpreted as the sequence of its byte values), iterates it
+    cyclically and perpetually adds an increasing counter to the result. If `wrap`
+    is specified, then the counter is reduced modulo this number.
+    &#34;&#34;&#34;
+    def delay(_):
+        k = cycle(range(number(wrap))) if wrap else count()
+        for item in cycle(it):
+            yield item + next(k)
+    return delay</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.DelayedNumbinArgument.dec"><code class="name flex">
+<span>def <span class="ident">dec</span></span>(<span>self, it, wrap=None)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>Identical to <code><a title="refinery.lib.argformats.DelayedNumbinArgument.inc" href="#refinery.lib.argformats.DelayedNumbinArgument.inc">DelayedNumbinArgument.inc()</a></code>, but the counter
+is subtracted from <code>it</code>.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L707-L717" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@handler.register(&#39;dec&#39;)
+def dec(self, it: Iterable[int], wrap=None) -&gt; Iterable[int]:
+    &#34;&#34;&#34;
+    Identical to `refinery.lib.argformats.DelayedNumbinArgument.inc`, but the counter
+    is subtracted from `it`.
+    &#34;&#34;&#34;
+    def delay(_):
+        k = cycle(range(number(wrap))) if wrap else count()
+        for item in cycle(it):
+            yield item - next(k)
+    return delay</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="refinery.lib.argformats.DelayedRegexpArgument"><code class="flex name class">
+<span>class <span class="ident">DelayedRegexpArgument</span></span>
+<span>(</span><span>expression)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>A parser for regular expressions arguments.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L720-L798" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">class DelayedRegexpArgument(DelayedArgument):
+    &#34;&#34;&#34;
+    A parser for regular expressions arguments.
+    &#34;&#34;&#34;
+
+    @DelayedArgumentDispatch
+    def handler(self, expression: str) -&gt; bytes:
+        &#34;&#34;&#34;
+        The default handler encodes the input expression as latin-1 to return a binary
+        string regular expression.
+        Furthermore, the use of named patterns from `refinery.lib.patterns.formats` and
+        `refinery.lib.patterns.indicators` is possible by means of the extension format
+        `(??name)`. For example, the pattern `e:((??url)\\x00){4}` will match a sequence
+        of four URL strings which are all terminated with a null character.
+        &#34;&#34;&#34;
+        if &#39;(??&#39; in expression:
+            import re
+            from .patterns import formats, indicators
+
+            def replace(match):
+                name = match[1]
+                return &#39;(?:{})&#39;.format(formats.get(
+                    name, indicators.get(name, match[0])))
+
+            expression = re.sub(
+                R&#39;\(\?\?({}|{})\)&#39;.format(
+                    &#39;|&#39;.join(p.name for p in formats),
+                    &#39;|&#39;.join(p.name for p in indicators)
+                ),
+                replace,
+                expression
+            )
+
+        return expression.encode(&#39;latin-1&#39;)
+
+    @handler.register(&#39;yara&#39;)
+    def yara(self, pattern: bytes) -&gt; bytes:
+        &#34;&#34;&#34;
+        The handler `yara:pattern` converts YARA syntax wildcard hexadecimal expressions
+        into regular expressions. For example, `D?` is translated to `[\\xD0-\\xDF]`, the
+        expression `[2-6]` becomes `.{2,6}`, and `?D` becomes the following substring:
+        ```
+        [\\x0D\\x1D\\x2D\\x3D\\x4D\\x5D\\x6D\\x7D\\x8D\\x9D\\xAD\\xBD\\xCD\\xDD\\xED\\xFD]
+        ```
+        Only two-letter hexadecimal sequences with optional `?` wildcards and wildcard
+        ranges such as `[2-6]` are substituted, all other characters in the pattern are
+        left unchanged.
+        &#34;&#34;&#34;
+        import re
+
+        def y2r(match):
+            expr = match[0]
+            if expr == B&#39;??&#39;:
+                return B&#39;.&#39;
+            if B&#39;?&#39; not in expr:
+                return BR&#39;\x%s&#39; % expr
+            if expr.endswith(B&#39;?&#39;):
+                return BR&#39;[\x%c0-\x%cF]&#39; % (expr[0], expr[0])
+            return BR&#39;[%s]&#39; % BR&#39;&#39;.join(
+                BR&#39;\x%x%c&#39; % (k, expr[1]) for k in range(0x10)
+            )
+
+        def yara_range(rng):
+            return B&#39;.{%s}&#39; % B&#39;,&#39;.join(t.strip() for t in rng[1:-1].split(B&#39;-&#39;))
+
+        pattern = re.split(BR&#39;(\[\s*\d+(?:\s*-\s*\d+)?\s*\])&#39;, pattern)
+        pattern[0::2] = [re.sub(BR&#39;[A-F0-9?]{2}&#39;, y2r, c) for c in pattern[::2]]
+        pattern[1::2] = [yara_range(b) for b in pattern[1::2]]
+        return B&#39;&#39;.join(pattern)
+
+    @handler.register(&#39;escape&#39;)
+    def escape(self, str: bytes) -&gt; bytes:
+        &#34;&#34;&#34;
+        The handler `escape:str` returns a regular expression which matches the exact
+        string sequence given by `str`, with special regular expression control characters
+        escaped.
+        &#34;&#34;&#34;
+        import re
+        return re.escape(str)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="refinery.lib.argformats.DelayedArgument" href="#refinery.lib.argformats.DelayedArgument">DelayedArgument</a></li>
+<li><a title="refinery.lib.argformats.LazyEvaluation" href="#refinery.lib.argformats.LazyEvaluation">LazyEvaluation</a></li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="refinery.lib.argformats.DelayedRegexpArgument.handler"><code class="name flex">
+<span>def <span class="ident">handler</span></span>(<span>self, expression)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>The default handler encodes the input expression as latin-1 to return a binary
+string regular expression.
+Furthermore, the use of named patterns from <code><a title="refinery.lib.patterns.formats" href="patterns/index.html#refinery.lib.patterns.formats">formats</a></code> and
+<code><a title="refinery.lib.patterns.indicators" href="patterns/index.html#refinery.lib.patterns.indicators">indicators</a></code> is possible by means of the extension format
+<code>(??name)</code>. For example, the pattern <code>e:((??url)\x00){4}</code> will match a sequence
+of four URL strings which are all terminated with a null character.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L725-L753" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@DelayedArgumentDispatch
+def handler(self, expression: str) -&gt; bytes:
+    &#34;&#34;&#34;
+    The default handler encodes the input expression as latin-1 to return a binary
+    string regular expression.
+    Furthermore, the use of named patterns from `refinery.lib.patterns.formats` and
+    `refinery.lib.patterns.indicators` is possible by means of the extension format
+    `(??name)`. For example, the pattern `e:((??url)\\x00){4}` will match a sequence
+    of four URL strings which are all terminated with a null character.
+    &#34;&#34;&#34;
+    if &#39;(??&#39; in expression:
+        import re
+        from .patterns import formats, indicators
+
+        def replace(match):
+            name = match[1]
+            return &#39;(?:{})&#39;.format(formats.get(
+                name, indicators.get(name, match[0])))
+
+        expression = re.sub(
+            R&#39;\(\?\?({}|{})\)&#39;.format(
+                &#39;|&#39;.join(p.name for p in formats),
+                &#39;|&#39;.join(p.name for p in indicators)
+            ),
+            replace,
+            expression
+        )
+
+    return expression.encode(&#39;latin-1&#39;)</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.DelayedRegexpArgument.yara"><code class="name flex">
+<span>def <span class="ident">yara</span></span>(<span>self, pattern)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>The handler <code>yara:pattern</code> converts YARA syntax wildcard hexadecimal expressions
+into regular expressions. For example, <code>D?</code> is translated to <code>[\xD0-\xDF]</code>, the
+expression <code>[2-6]</code> becomes <code>.{2,6}</code>, and <code>?D</code> becomes the following substring:</p>
+<pre><code>[\x0D\x1D\x2D\x3D\x4D\x5D\x6D\x7D\x8D\x9D\xAD\xBD\xCD\xDD\xED\xFD]
+</code></pre>
+<p>Only two-letter hexadecimal sequences with optional <code>?</code> wildcards and wildcard
+ranges such as <code>[2-6]</code> are substituted, all other characters in the pattern are
+left unchanged.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L755-L788" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@handler.register(&#39;yara&#39;)
+def yara(self, pattern: bytes) -&gt; bytes:
+    &#34;&#34;&#34;
+    The handler `yara:pattern` converts YARA syntax wildcard hexadecimal expressions
+    into regular expressions. For example, `D?` is translated to `[\\xD0-\\xDF]`, the
+    expression `[2-6]` becomes `.{2,6}`, and `?D` becomes the following substring:
+    ```
+    [\\x0D\\x1D\\x2D\\x3D\\x4D\\x5D\\x6D\\x7D\\x8D\\x9D\\xAD\\xBD\\xCD\\xDD\\xED\\xFD]
+    ```
+    Only two-letter hexadecimal sequences with optional `?` wildcards and wildcard
+    ranges such as `[2-6]` are substituted, all other characters in the pattern are
+    left unchanged.
+    &#34;&#34;&#34;
+    import re
+
+    def y2r(match):
+        expr = match[0]
+        if expr == B&#39;??&#39;:
+            return B&#39;.&#39;
+        if B&#39;?&#39; not in expr:
+            return BR&#39;\x%s&#39; % expr
+        if expr.endswith(B&#39;?&#39;):
+            return BR&#39;[\x%c0-\x%cF]&#39; % (expr[0], expr[0])
+        return BR&#39;[%s]&#39; % BR&#39;&#39;.join(
+            BR&#39;\x%x%c&#39; % (k, expr[1]) for k in range(0x10)
+        )
+
+    def yara_range(rng):
+        return B&#39;.{%s}&#39; % B&#39;,&#39;.join(t.strip() for t in rng[1:-1].split(B&#39;-&#39;))
+
+    pattern = re.split(BR&#39;(\[\s*\d+(?:\s*-\s*\d+)?\s*\])&#39;, pattern)
+    pattern[0::2] = [re.sub(BR&#39;[A-F0-9?]{2}&#39;, y2r, c) for c in pattern[::2]]
+    pattern[1::2] = [yara_range(b) for b in pattern[1::2]]
+    return B&#39;&#39;.join(pattern)</code></pre>
+</details>
+</dd>
+<dt id="refinery.lib.argformats.DelayedRegexpArgument.escape"><code class="name flex">
+<span>def <span class="ident">escape</span></span>(<span>self, str)</span>
+</code></dt>
+<dd>
+<section class="desc"><p>The handler <code>escape:str</code> returns a regular expression which matches the exact
+string sequence given by <code>str</code>, with special regular expression control characters
+escaped.</p></section>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+<a href="https://github.com/binref/refinery/blob/238a54e16c2e926f29dde73bb91a2e05be817b90/refinery/lib/argformats.py#L790-L798" class="git-link">Browse git</a>
+</summary>
+<pre><code class="python">@handler.register(&#39;escape&#39;)
+def escape(self, str: bytes) -&gt; bytes:
+    &#34;&#34;&#34;
+    The handler `escape:str` returns a regular expression which matches the exact
+    string sequence given by `str`, with special regular expression control characters
+    escaped.
+    &#34;&#34;&#34;
+    import re
+    return re.escape(str)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul>
+<li><a href="#multibin-syntax">Multibin Syntax</a><ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#the-details">The Details</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="refinery.lib" href="index.html">refinery.lib</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-variables">Global variables</a></h3>
+<ul class="">
+<li><code><a title="refinery.lib.argformats.number" href="#refinery.lib.argformats.number">number</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="refinery.lib.argformats.sliceobj" href="#refinery.lib.argformats.sliceobj">sliceobj</a></code></li>
+<li><code><a title="refinery.lib.argformats.utf8" href="#refinery.lib.argformats.utf8">utf8</a></code></li>
+<li><code><a title="refinery.lib.argformats.multibin" href="#refinery.lib.argformats.multibin">multibin</a></code></li>
+<li><code><a title="refinery.lib.argformats.numbin" href="#refinery.lib.argformats.numbin">numbin</a></code></li>
+<li><code><a title="refinery.lib.argformats.regexp" href="#refinery.lib.argformats.regexp">regexp</a></code></li>
+<li><code><a title="refinery.lib.argformats.OptionFactory" href="#refinery.lib.argformats.OptionFactory">OptionFactory</a></code></li>
+<li><code><a title="refinery.lib.argformats.extract_options" href="#refinery.lib.argformats.extract_options">extract_options</a></code></li>
+<li><code><a title="refinery.lib.argformats.pending" href="#refinery.lib.argformats.pending">pending</a></code></li>
+<li><code><a title="refinery.lib.argformats.manifest" href="#refinery.lib.argformats.manifest">manifest</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="refinery.lib.argformats.PythonExpression" href="#refinery.lib.argformats.PythonExpression">PythonExpression</a></code></h4>
+</li>
+<li>
+<h4><code><a title="refinery.lib.argformats.virtualaddr" href="#refinery.lib.argformats.virtualaddr">virtualaddr</a></code></h4>
+</li>
+<li>
+<h4><code><a title="refinery.lib.argformats.IncompatibleHandler" href="#refinery.lib.argformats.IncompatibleHandler">IncompatibleHandler</a></code></h4>
+</li>
+<li>
+<h4><code><a title="refinery.lib.argformats.TooLazy" href="#refinery.lib.argformats.TooLazy">TooLazy</a></code></h4>
+</li>
+<li>
+<h4><code><a title="refinery.lib.argformats.VariableMissing" href="#refinery.lib.argformats.VariableMissing">VariableMissing</a></code></h4>
+</li>
+<li>
+<h4><code><a title="refinery.lib.argformats.LazyEvaluation" href="#refinery.lib.argformats.LazyEvaluation">LazyEvaluation</a></code></h4>
+</li>
+<li>
+<h4><code><a title="refinery.lib.argformats.DelayedArgumentDispatch" href="#refinery.lib.argformats.DelayedArgumentDispatch">DelayedArgumentDispatch</a></code></h4>
+<ul class="">
+<li><code><a title="refinery.lib.argformats.DelayedArgumentDispatch.can_handle" href="#refinery.lib.argformats.DelayedArgumentDispatch.can_handle">can_handle</a></code></li>
+<li><code><a title="refinery.lib.argformats.DelayedArgumentDispatch.terminates" href="#refinery.lib.argformats.DelayedArgumentDispatch.terminates">terminates</a></code></li>
+<li><code><a title="refinery.lib.argformats.DelayedArgumentDispatch.register" href="#refinery.lib.argformats.DelayedArgumentDispatch.register">register</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="refinery.lib.argformats.DelayedArgument" href="#refinery.lib.argformats.DelayedArgument">DelayedArgument</a></code></h4>
+<ul class="">
+<li><code><a title="refinery.lib.argformats.DelayedArgument.handler" href="#refinery.lib.argformats.DelayedArgument.handler">handler</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="refinery.lib.argformats.DelayedBinaryArgument" href="#refinery.lib.argformats.DelayedBinaryArgument">DelayedBinaryArgument</a></code></h4>
+<ul class="two-column">
+<li><code><a title="refinery.lib.argformats.DelayedBinaryArgument.s" href="#refinery.lib.argformats.DelayedBinaryArgument.s">s</a></code></li>
+<li><code><a title="refinery.lib.argformats.DelayedBinaryArgument.u" href="#refinery.lib.argformats.DelayedBinaryArgument.u">u</a></code></li>
+<li><code><a title="refinery.lib.argformats.DelayedBinaryArgument.a" href="#refinery.lib.argformats.DelayedBinaryArgument.a">a</a></code></li>
+<li><code><a title="refinery.lib.argformats.DelayedBinaryArgument.h" href="#refinery.lib.argformats.DelayedBinaryArgument.h">h</a></code></li>
+<li><code><a title="refinery.lib.argformats.DelayedBinaryArgument.file" href="#refinery.lib.argformats.DelayedBinaryArgument.file">file</a></code></li>
+<li><code><a title="refinery.lib.argformats.DelayedBinaryArgument.range" href="#refinery.lib.argformats.DelayedBinaryArgument.range">range</a></code></li>
+<li><code><a title="refinery.lib.argformats.DelayedBinaryArgument.copy" href="#refinery.lib.argformats.DelayedBinaryArgument.copy">copy</a></code></li>
+<li><code><a title="refinery.lib.argformats.DelayedBinaryArgument.cut" href="#refinery.lib.argformats.DelayedBinaryArgument.cut">cut</a></code></li>
+<li><code><a title="refinery.lib.argformats.DelayedBinaryArgument.meta_get" href="#refinery.lib.argformats.DelayedBinaryArgument.meta_get">meta_get</a></code></li>
+<li><code><a title="refinery.lib.argformats.DelayedBinaryArgument.meta_pop" href="#refinery.lib.argformats.DelayedBinaryArgument.meta_pop">meta_pop</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="refinery.lib.argformats.DelayedNumbinArgument" href="#refinery.lib.argformats.DelayedNumbinArgument">DelayedNumbinArgument</a></code></h4>
+<ul class="">
+<li><code><a title="refinery.lib.argformats.DelayedNumbinArgument.handler" href="#refinery.lib.argformats.DelayedNumbinArgument.handler">handler</a></code></li>
+<li><code><a title="refinery.lib.argformats.DelayedNumbinArgument.ev" href="#refinery.lib.argformats.DelayedNumbinArgument.ev">ev</a></code></li>
+<li><code><a title="refinery.lib.argformats.DelayedNumbinArgument.unpack" href="#refinery.lib.argformats.DelayedNumbinArgument.unpack">unpack</a></code></li>
+<li><code><a title="refinery.lib.argformats.DelayedNumbinArgument.inc" href="#refinery.lib.argformats.DelayedNumbinArgument.inc">inc</a></code></li>
+<li><code><a title="refinery.lib.argformats.DelayedNumbinArgument.dec" href="#refinery.lib.argformats.DelayedNumbinArgument.dec">dec</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="refinery.lib.argformats.DelayedRegexpArgument" href="#refinery.lib.argformats.DelayedRegexpArgument">DelayedRegexpArgument</a></code></h4>
+<ul class="">
+<li><code><a title="refinery.lib.argformats.DelayedRegexpArgument.handler" href="#refinery.lib.argformats.DelayedRegexpArgument.handler">handler</a></code></li>
+<li><code><a title="refinery.lib.argformats.DelayedRegexpArgument.yara" href="#refinery.lib.argformats.DelayedRegexpArgument.yara">yara</a></code></li>
+<li><code><a title="refinery.lib.argformats.DelayedRegexpArgument.escape" href="#refinery.lib.argformats.DelayedRegexpArgument.escape">escape</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.8.3</a>.</p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+hljs.configure({languages: []})
+hljs.initHighlightingOnLoad()
+</script>
+</body>
+</html>
